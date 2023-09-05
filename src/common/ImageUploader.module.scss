@@ -1,0 +1,146 @@
+@import '../styles/variables';
+
+.ImageUploader {
+    min-width: 312px;
+
+    &_label {
+        font-weight: 500;
+        font-size: .875rem;
+        line-height: 170%;
+        color: $dove-gray;
+        margin-bottom: 32px;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &_uploadBtn {
+        cursor: pointer;
+
+        &_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        &_circle {
+            width: 80px;
+            height: 80px;
+            background-color: $orange-secondary;
+            box-shadow: 0px 14.2857px 28.5714px rgba(254, 197, 206, 0.18), 0px 2.85714px 8.57143px rgba(254, 197, 206, 0.12), 0px 0px 1.42857px rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &_icon {
+            display: block;
+        }
+
+        &_name {
+            font-weight: 500;
+            font-size: .75rem;
+            line-height: 160%;
+            text-align: center;
+            color: $mine-shaft;
+            margin-top: 8px;
+        }
+
+        &_label {
+            font-size: .75rem;
+            line-height: 120%;
+            text-align: center;
+            color: $dusty-gray;
+            margin-top: 8px;
+        }
+
+        &__dragging {
+            .ImageUploader_uploadBtn_circle {
+                background-color: $pink-salmon;
+            }
+        }
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 200px;
+        overflow: hidden;
+        margin-bottom: 16px;
+
+        &_img {
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 14.2857px 28.5714px rgba(254, 197, 206, 0.18), 0px 2.85714px 8.57143px rgba(254, 197, 206, 0.12), 0px 0px 1.42857px rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            display: block;
+            object-fit: cover;
+        }
+
+        &_name {
+            font-weight: 500;
+            font-size: .75rem;
+            line-height: 160%;
+            text-align: center;
+            color: $mine-shaft;
+            margin-top: 8px;
+        }
+
+        &_btns {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        &_btn {
+            width: 22px;
+            height: 20px;
+            margin-right: 8px;
+            cursor: pointer;
+
+            img {
+                display: block;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &_addMoreButton {
+        margin-top: 36px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        &_item {
+            margin-right: 32px;
+        }
+
+        &_uploadBtn {
+            &_circle {
+                width: 123px;
+                height: 123px;
+                padding: 32px;
+            }
+
+            &_icon {
+                width: 100%;
+            }
+        }
+
+        &_addMoreButton {
+            margin-left: 32px;
+        }
+    }
+}

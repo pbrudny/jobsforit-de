@@ -1,0 +1,65 @@
+.JobsList {
+  padding-top: 32px; }
+  .JobsList_top {
+    margin-bottom: 20px; }
+  .JobsList_list {
+    max-width: 800px;
+    margin: 0 auto; }
+  .JobsList_columns {
+    display: flex;
+    align-items: flex-start; }
+  .JobsList_columnJobsList {
+    width: 100%;
+    overflow-y: auto; }
+  .JobsList_columnSingleJob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    bottom: 0;
+    background: #f5f5f5;
+    width: 100%;
+    overflow-y: auto; }
+    .JobsList_columnSingleJob__hidden {
+      display: none; }
+  @media screen and (min-width: 992px) {
+    .JobsList_top {
+      margin-bottom: 60px; }
+    .JobsList_columnJobsList {
+      width: 42%;
+      padding-right: 32px;
+      border-right: 1px solid #B9B9B9;
+      padding-top: 24px;
+      height: calc(100vh - 110px);
+      scrollbar-width: thin;
+      scrollbar-color: #E5E5E5 #B9347D; }
+      .JobsList_columnJobsList::-webkit-scrollbar {
+        width: 10px; }
+      .JobsList_columnJobsList::-webkit-scrollbar-track {
+        background: #E5E5E5; }
+      .JobsList_columnJobsList::-webkit-scrollbar-thumb {
+        background-color: #B9347D;
+        border-radius: 6px;
+        border: 2px solid #E5E5E5; }
+    .JobsList_columnSingleJob {
+      position: static;
+      width: 58%;
+      padding-left: 32px;
+      padding-top: 24px;
+      height: calc(100vh - 110px);
+      scrollbar-width: thin;
+      scrollbar-color: #E5E5E5 #B9347D;
+      z-index: 0; }
+      .JobsList_columnSingleJob::-webkit-scrollbar {
+        width: 10px; }
+      .JobsList_columnSingleJob::-webkit-scrollbar-track {
+        background: #E5E5E5; }
+      .JobsList_columnSingleJob::-webkit-scrollbar-thumb {
+        background-color: #B9347D;
+        border-radius: 6px;
+        border: 2px solid #f5f5f5; }
+      .JobsList_columnSingleJob__hidden {
+        display: block; } }
+
+/*# sourceMappingURL=JobsList.module.css.map */

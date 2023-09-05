@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.AddMoreButton {
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 150%;
+    color: $primary;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-md) {
+        text-align: left;
+        width: auto;
+    }
+}

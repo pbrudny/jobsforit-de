@@ -1,0 +1,82 @@
+.TutorialItem {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 24px 16px;
+  display: block;
+  transition: box-shadow .2s ease-in-out; }
+  .TutorialItem_top {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px; }
+  .TutorialItem_imgWrapper {
+    width: 92px;
+    height: 92px;
+    margin-right: 12px;
+    position: relative; }
+    .TutorialItem_imgWrapper::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+      z-index: 2;
+      border-radius: 4px; }
+    .TutorialItem_imgWrapper::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 24px solid #fff;
+      transform: translate(-50%, -50%);
+      z-index: 3; }
+  .TutorialItem_img {
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; }
+  .TutorialItem_group {
+    width: calc(100% - 104px); }
+  .TutorialItem_heading {
+    margin-bottom: 12px; }
+  .TutorialItem_detail {
+    font-size: .75rem;
+    line-height: 150%;
+    color: #999999;
+    display: block; }
+  .TutorialItem_description {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 150%;
+    color: #666666; }
+  .TutorialItem:hover {
+    box-shadow: -1px 13px 20px rgba(0, 0, 0, 0.05), 6px 7px 20px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.05); }
+  @media screen and (min-width: 992px) {
+    .TutorialItem {
+      padding: 40px 24px 34px; }
+      .TutorialItem_top {
+        margin-bottom: 16px; }
+      .TutorialItem_imgWrapper {
+        width: 120px;
+        height: 120px;
+        margin-right: 24px; }
+      .TutorialItem_group {
+        width: calc(100% - 144px); }
+      .TutorialItem_heading {
+        margin-bottom: 24px; }
+      .TutorialItem_detail {
+        font-size: .875rem; }
+      .TutorialItem_description {
+        font-size: .875rem; } }
+
+/*# sourceMappingURL=TutorialItem.module.css.map */

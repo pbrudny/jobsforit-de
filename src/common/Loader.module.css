@@ -1,0 +1,34 @@
+@keyframes :global(loaderPulse) {
+  50% {
+    transform: scale(1.25); }
+  100% {
+    transform: scale(1); } }
+.Loader {
+  width: 78px;
+  height: 16px;
+  position: relative; }
+  .Loader span :global {
+    position: absolute;
+    left: 31px;
+    top: 0;
+    height: 100%;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #909090;
+    animation: .75s loaderPulse linear -0.16s infinite; }
+  .Loader::before, .Loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #909090; }
+  .Loader::before :global {
+    left: 0;
+    animation: .75s loaderPulse linear -0.32s infinite; }
+  .Loader::after :global {
+    right: 0;
+    animation: .75s loaderPulse linear 0s infinite; }
+
+/*# sourceMappingURL=Loader.module.css.map */

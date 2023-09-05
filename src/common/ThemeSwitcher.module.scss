@@ -1,0 +1,49 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.ThemeSwitcher {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 20px;
+  border-radius: 34px;
+  margin-right: 40px;
+  background-color: $grey-400;
+  cursor: pointer;
+  transition: background-color .4s ease-in-out;
+
+  &_light {
+    background-color: $primary;
+
+    &::before {
+      background: white url('../assets/img/icons-new-design/sun.svg');
+      transform: translateX(24px);
+    }
+  }
+
+  &_dark {
+    &::before {
+      background: $dark-400 url('../assets/img/icons-new-design/moon.svg');
+      filter: brightness(0.9);
+    }
+  }
+
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 32px;
+    width: 32px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+}

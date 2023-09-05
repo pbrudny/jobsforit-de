@@ -1,0 +1,101 @@
+@import '../styles/variables';
+
+.ArticleFirst {
+
+    &_img {
+        border-radius: 8px;
+        display: block;
+        margin-bottom: 24px;
+    }
+
+    &_label {
+        font-size: .5rem;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 6px 8px;
+        background: $primary;
+        border-radius: 54px
+    }
+
+    &_heading {
+        margin: 4px 0;
+    }
+
+    &_details {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_detail {
+        font-size: .75rem;
+        line-height: 150%;
+        color: $dusty-gray;
+        margin-bottom: 24px;
+
+        a {
+            color: $primary;
+            font-weight: 500;
+        }
+    }
+
+    &_description {
+        font-weight: 500;
+        font-size: .75rem;
+        line-height: 150%;
+        color: $mine-shaft;
+        margin-bottom: 32px;
+    }
+
+    &_btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (min-width: $breakpoint-md)  {
+        display: flex;
+
+        &_group {
+            width: 50%;
+
+            &:first-child {
+                padding-right: 30px;
+            }
+
+            &:last-child {
+                padding-left: 30px;
+            }
+        }
+
+        &_img {
+            height: 392px;
+            width: 100%;
+            margin-bottom: 0;
+            border-radius: 12px;
+        }
+
+        &_label {
+            font-size: .75rem;
+            line-height: 200%;
+            padding: 4px 16px;
+        }
+
+        &_heading {
+            margin: 16px 0;
+        }
+
+        &_detail {
+            font-size: .875rem;
+            margin-bottom: 40px;
+        }
+
+        &_description {
+            font-size: .875rem;
+            margin-bottom: 40px;
+        }
+
+        &_btn {
+            justify-content: flex-start;
+        }
+    }
+}

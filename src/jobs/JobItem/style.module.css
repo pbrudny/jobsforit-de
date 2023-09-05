@@ -1,0 +1,159 @@
+.JobItem {
+  padding: 20px 16px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out; }
+  .JobItem_imgWrapper {
+    width: 56px;
+    height: 56px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    padding: 8px; }
+  .JobItem_img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; }
+  .JobItem_top {
+    display: flex;
+    align-items: flex-start; }
+  .JobItem_content {
+    width: calc(100% - 64px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; }
+  .JobItem_bottom {
+    padding-top: 12px;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 12px; }
+  .JobItem_detail {
+    font-size: .75rem;
+    line-height: 110%;
+    font-weight: 500;
+    color: #666666;
+    margin-top: 2px; }
+  .JobItem_salary {
+    font-size: .75rem;
+    line-height: 150%;
+    font-weight: 600;
+    color: #B9347D;
+    margin-top: 8px; }
+  .JobItem_tags {
+    display: flex;
+    flex-wrap: wrap; }
+  .JobItem_tag {
+    font-weight: 700;
+    font-size: 0.5625rem;
+    line-height: 240%;
+    padding: 4px 16px;
+    color: #666666;
+    background: #F2F2F2;
+    border-radius: 54px;
+    margin-right: 16px;
+    margin-bottom: 10px; }
+    .JobItem_tag:last-child {
+      margin-right: 0; }
+  .JobItem_label {
+    font-size: .5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #B9347D;
+    padding: 6px 8px;
+    border-radius: 54px;
+    margin-left: 8px; }
+  .JobItem_time {
+    font-size: .625rem;
+    line-height: 150%;
+    font-weight: 400;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    margin-top: 2px; }
+  .JobItem_timeIcon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 8px; }
+  .JobItem:hover {
+    box-shadow: -1px 13px 20px rgba(0, 0, 0, 0.05), 6px 7px 20px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.05); }
+  @media screen and (min-width: 992px) {
+    .JobItem {
+      border-radius: 12px;
+      padding: 32px 32px 22px;
+      margin-bottom: 32px; }
+      .JobItem_imgWrapper {
+        width: 100px;
+        height: 100px;
+        margin-right: 48px;
+        padding: 12px; }
+      .JobItem_content {
+        width: calc(100% - 148px); }
+      .JobItem_detail {
+        font-size: .875rem;
+        line-height: 150%;
+        margin-top: 4px; }
+      .JobItem_salary {
+        font-size: .875rem;
+        font-weight: 700; }
+      .JobItem_label {
+        font-size: .75rem;
+        line-height: 200%;
+        padding: 4px 16px;
+        margin-left: 16px; }
+      .JobItem_bottom {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0;
+        border-top: 0; }
+      .JobItem_bottomWrapper {
+        width: calc(100% - 148px);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between; }
+      .JobItem_tag {
+        font-size: 0.75rem;
+        line-height: 170%;
+        padding: 8px 16px;
+        margin-right: 16px; }
+      .JobItem_time {
+        font-size: .75rem;
+        margin-top: 9px; }
+      .JobItem_timeIcon {
+        width: 22px;
+        height: 22px; }
+      .JobItem__singleJob {
+        padding: 20px 16px; }
+        .JobItem__singleJob .JobItem_imgWrapper {
+          width: 80px;
+          height: 80px;
+          margin-right: 24px; }
+        .JobItem__singleJob .JobItem_top {
+          display: flex;
+          align-items: flex-start; }
+        .JobItem__singleJob .JobItem_content {
+          width: calc(100% - 104px);
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between; }
+        .JobItem__singleJob .JobItem_bottom {
+          padding-top: 16px;
+          margin-top: 16px;
+          border-top: 1px solid #F0F0F0; }
+        .JobItem__singleJob .JobItem_bottomWrapper {
+          display: block;
+          width: 100%; }
+        .JobItem__singleJob .JobItem_time {
+          display: flex;
+          align-items: center;
+          margin-top: 6px; } }
+
+/*# sourceMappingURL=JobItem.module.css.map */

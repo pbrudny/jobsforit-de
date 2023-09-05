@@ -1,0 +1,55 @@
+.StudyMaterial {
+  background-color: #f5f5f5;
+  overflow: hidden; }
+  .StudyMaterial_top {
+    margin: 32px 0 24px; }
+  .StudyMaterial_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0 -8px; }
+  .StudyMaterial_item {
+    width: calc(50% - 16px);
+    margin: 0 8px 16px;
+    min-height: 132px; }
+  @media screen and (min-width: 992px) {
+    .StudyMaterial_top {
+      margin: 32px 0; }
+    .StudyMaterial_item {
+      width: calc(25% - 24px);
+      margin: 0 12px 40px;
+      min-height: 200px; } }
+
+.FilterBar {
+  background-color: #fff;
+  margin-top: 105px;
+  padding-bottom: 50px; }
+  .FilterBar_heading {
+    text-align: center;
+    margin: 24px 0; }
+  .FilterBar_wrapper {
+    max-width: 809px;
+    margin: auto; }
+  .FilterBar_mobileFilter {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px -6px 0; }
+    .FilterBar_mobileFilter_item {
+      margin: 0 6px 20px; }
+  .FilterBar_desktopFilter {
+    display: none;
+    margin-top: 40px; }
+  @media screen and (min-width: 992px) {
+    .FilterBar {
+      margin-top: 110px;
+      padding: 32px 0;
+      border-radius: 0 0 20px 20px; }
+      .FilterBar_heading {
+        margin-top: 0;
+        margin-bottom: 40px; }
+      .FilterBar_mobileFilter {
+        display: none; }
+      .FilterBar_desktopFilter {
+        display: block; } }
+
+/*# sourceMappingURL=StudyMaterial.module.css.map */

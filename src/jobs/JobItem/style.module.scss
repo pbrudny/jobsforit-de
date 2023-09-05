@@ -1,0 +1,391 @@
+@import '../../styles/variables';
+
+.JobItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color $transition-base;
+  overflow: hidden;
+  margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-md) {
+    margin-bottom: 0;
+    padding-left: 12px;
+  }
+
+  &:first-child {
+    .JobItem {
+      &_content {
+        @media (min-width: $breakpoint-md) {
+          border-top: 1px solid;
+        }
+      }
+    }
+  }
+
+  &__singleJob {
+    .JobItem {
+      &_headingText {
+        max-width: 250px;
+
+        @media (min-width: $breakpoint-xxl) {
+          max-width: 500px;
+        }
+      }
+
+      &_tag {
+        display: none;
+
+        &:first-child {
+          display: block;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__selectedItemDark {
+    background-color: rgba(87, 95, 105, 0.4);
+  }
+
+  &__selectedItemLight {
+    background-color: rgba(197, 197, 197, 0.4);
+  }
+
+  &__dark {
+
+    &:hover {
+      background-color: rgba(87, 95, 105, 0.4);
+    }
+
+    &:first-child {
+      .JobItem {
+        &_content {
+          border-color: #43454A;
+        }
+      }
+    }
+
+    .JobItem {
+      &_imgWrapper {
+        background-color: #f5f5f5;
+      }
+
+      &_content {
+        border-color: #43454A;
+      }
+
+      &_heading {
+        color: #FFFFFF;
+      }
+
+      &_detailsItem {
+        color: $grey-300;
+
+        &::after {
+          background-color: $grey-300;
+        }
+      }
+
+      &_newLabel {
+        color: #37393F;
+      }
+
+      &_tag {
+        border-color: $grey-300;
+        color: $grey-300;
+      }
+
+      &_time {
+        color: $grey-300;
+      }
+
+    }
+  }
+
+  &__light {
+
+    &:hover {
+      background-color: rgba(197, 197, 197, 0.4);
+    }
+
+    &:first-child {
+      .JobItem {
+        &_content {
+          border-color: $mercury;
+        }
+      }
+    }
+
+    .JobItem {
+      &_imgWrapper {
+        background-color: #fff;
+      }
+
+      &_content {
+        border-color: $mercury;
+      }
+
+      &_heading {
+        color: #000;
+      }
+
+      &_detailsItem {
+        color: $dove-gray;
+
+        &::after {
+          background-color: $dove-gray;
+        }
+      }
+
+      &_newLabel {
+        color: #37393F;
+      }
+
+      &_salary {
+        font-weight: 400;
+      }
+
+      &_tag {
+        border-color: $dove-gray;
+        color: $dove-gray;
+      }
+
+      &_time {
+        color: $dove-gray;
+      }
+
+    }
+  }
+
+  &_bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #9FD878;
+  }
+
+  &_imgWrapper {
+    width: 45px;
+    height: 45px;
+    margin-right: 8px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      width: 58px;
+      height: 58px;
+      margin-right: 20px;
+    }
+  }
+
+  &_img {
+    max-width: 75%;
+    max-height: 75%;
+    display: block;
+  }
+
+  &_content {
+    width: calc(100% - 53px);
+    display: flex;
+    justify-content: space-between;
+    transition: border-color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      width: calc(100% - 78px);
+      padding: 16px 0;
+      border-bottom: 1px solid;
+    }
+  }
+
+  &_leftContent {
+    width: calc(100% - 150px);
+
+    @media (min-width: $breakpoint-md) {
+      width: unset;
+    }
+  }
+
+  &_rightContent {
+    min-width: 150px;
+    margin-right: 1rem;
+  }
+
+  &_heading {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-start;
+    transition: color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    &Text {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 800px;
+    }
+  }
+
+  &_hotLabel {
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fe5e26;
+    margin-left: 8px;
+    white-space: nowrap;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 12px;
+    }
+  }
+
+  &_detailsList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_detailsItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: .75rem;
+    padding-right: 8px;
+    margin-right: 8px;
+    transition: color $transition-base;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      padding-right: 0;
+      margin-right: 12px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &Icon {
+      display: none;
+      margin-right: 6px;
+      max-width: 12px;
+
+      svg {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+  }
+
+  &_salaryWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &_salary {
+    font-size: .75rem;
+    color: $primary;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+
+  &_newLabel {
+    width: 40px;
+    margin-left: 5px;
+    background: #35B9E2;
+    border-radius: 54px;
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      margin-left: 12px;
+    }
+  }
+
+  &_tags {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+
+    @media (min-width: $breakpoint-md) {
+      margin-top: 16px;
+    }
+  }
+
+  &_tag {
+    display: none;
+    border: 1px solid;
+    font-weight: 500;
+    font-size: .5rem;
+    line-height: 1;
+    padding: 3px 8px;
+    border-radius: 54px;
+    min-width: 40px;
+    margin-left: 8px;
+    text-align: center;
+    transition: border-color $transition-base, color $transition-base;
+
+    &:first-child {
+      display: block;
+      margin-left: 0;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+      font-size: .75rem;
+    }
+  }
+
+  &_time {
+    font-weight: bold;
+    font-size: .5rem;
+    width: 40px;
+    text-align: center;
+    transition: color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 12px;
+    }
+  }
+}

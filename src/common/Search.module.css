@@ -1,0 +1,25 @@
+.Search {
+  border: 1px solid #B9347D;
+  border-radius: 66px;
+  padding: 8px 24px;
+  position: relative; }
+  .Search input.Search_input {
+    padding: 8px 0;
+    font-size: .875rem;
+    line-height: 120%;
+    color: #999999;
+    width: calc(100% - 60px); }
+  .Search_btn {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    background-color: #B9347D;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+
+/*# sourceMappingURL=Search.module.css.map */

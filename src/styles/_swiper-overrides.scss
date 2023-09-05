@@ -1,0 +1,91 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background-color: #E6E6E6;
+}
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+    transform: scale(0.8);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $dusty-gray;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, 
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;
+}
+
+.swiper-align-center .swiper-pagination-fraction, .swiper-pagination-custom, 
+.swiper-align-center > .swiper-pagination-bullets {
+    bottom: 24px;
+}
+
+.swiper-fade .swiper-pagination-fraction, .swiper-pagination-custom, 
+.swiper-fade > .swiper-pagination-bullets {
+    bottom: 0px;
+}
+
+.swiper-align-center .swiper-wrapper {
+    align-items: center;
+}
+
+.swiper-button-prev, 
+.swiper-button-next {
+    width: 24px;
+    height: 24px;
+    
+    @media screen and (min-width: $breakpoint-md) {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.swiper-button-prev:after, 
+.swiper-button-next:after {
+    content: '';
+    width: 8px;
+    height: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../assets/img/icons-new-design/arrow--short--left--gray.svg');
+    background-size: contain;
+
+    @media screen and (min-width: $breakpoint-md) {
+        width: 15px;
+        height: 24px;
+    }
+}
+
+.swiper-button-next:after {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 0;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: 0;
+}
+
+.swiper-fade {
+    .swiper-slide {
+        opacity: 0.6;
+        transform: scale(.94);
+        transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+    }
+
+    .swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

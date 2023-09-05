@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.SearchStatistics {
+  display: flex;
+
+  &_light {
+    .SearchStatistics {
+
+      &__itemValue {
+        color: $dark-gray;
+      }
+
+      &__itemLabel {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  &_dark {
+    .SearchStatistics {
+
+      &__itemValue {
+        color: #fff;
+      }
+
+      &__itemLabel {
+        color: $grey-300;
+      }
+    }
+  }
+
+  &__item {
+    margin-right: 32px;
+
+    @media (min-width: $breakpoint-md) {
+      min-width: 95px;
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__itemValue {
+    display: block;
+    font-size: 1rem;
+    transition: color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 30px;
+    }
+  }
+
+  &__itemLabel {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.5rem;
+    transition: color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 0.75rem;
+    }
+  }
+}

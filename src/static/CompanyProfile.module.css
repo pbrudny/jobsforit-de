@@ -1,0 +1,522 @@
+.Company {
+  background: #F5F5F5;
+  overflow: hidden; }
+  .Company_header {
+    background: linear-gradient(180deg, #FF9A9E 17.17%, #FAD0C4 99.17%, #FAD0C4 100%);
+    border-radius: 0 0 12px 12px;
+    padding: 24px 0;
+    margin-top: 70px; }
+    .Company_header_img {
+      display: none; }
+    .Company_header_top {
+      margin-bottom: 24px; }
+    .Company_header_btn {
+      cursor: pointer; }
+      .Company_header_btn img {
+        display: block; }
+  .Company_card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 16px;
+    display: flex;
+    align-items: flex-start; }
+    .Company_card_imgWrapper {
+      width: 56px;
+      height: 56px;
+      background: #F5F5F5;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      padding: 16px; }
+    .Company_card_img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block; }
+    .Company_card_content {
+      width: calc(100% - 64px); }
+    .Company_card_heading {
+      font-weight: bold;
+      font-size: .875rem;
+      line-height: 120%;
+      color: #333333;
+      margin-bottom: 4px; }
+    .Company_card_details {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 120%;
+      color: #666666;
+      margin-bottom: 4px; }
+    .Company_card_desktopDetails {
+      display: none; }
+    .Company_card_tags {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap; }
+    .Company_card_tag {
+      background: #B9347D;
+      border-radius: 54px;
+      padding: 6px 8px;
+      font-weight: bold;
+      font-size: .5rem;
+      text-align: center;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin-right: 8px;
+      margin-bottom: 8px; }
+      .Company_card_tag:last-child {
+        margin-right: 0; }
+  .Company_section {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 24px 16px; }
+    .Company_section_top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer; }
+    .Company_section_accordionIcon {
+      transition: transform .3s ease-in-out; }
+      .Company_section_accordionIcon img {
+        width: 12px;
+        display: block; }
+    .Company_section_bottom {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px; }
+    .Company_section_content {
+      max-height: 6rem;
+      overflow: hidden;
+      text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      transition-duration: 0.5s;
+      transition-property: max-height; }
+    .Company_section_accordionBtn {
+      font-weight: 700;
+      font-size: .875rem;
+      line-height: 125%;
+      text-align: right;
+      color: #B9347D;
+      cursor: pointer; }
+    .Company_section_heading {
+      margin-bottom: 20px; }
+    .Company_section_description {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 150%;
+      color: #333333; }
+      .Company_section_description ul li {
+        margin-bottom: 16px;
+        padding-left: 24px;
+        position: relative; }
+        .Company_section_description ul li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          background-image: url("../assets/img/icons-new-design/list-bullet--yellow.svg");
+          background-size: contain;
+          background-repeat: no-repeat; }
+        .Company_section_description ul li:last-child {
+          margin-bottom: 0; }
+    .Company_section_tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 24px; }
+    .Company_section_tag {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      border-radius: 54px;
+      padding: 4px 24px;
+      font-weight: 700;
+      font-size: .625rem;
+      line-height: 220%;
+      text-align: center;
+      color: #333333;
+      margin-right: 8px;
+      margin-bottom: 8px; }
+      .Company_section_tag:last-child {
+        margin-right: 0; }
+    .Company_section_benefitList {
+      display: flex;
+      flex-wrap: wrap; }
+      .Company_section_benefitList_item {
+        position: relative;
+        width: 50%;
+        font-weight: 500;
+        font-size: .75rem;
+        line-height: 160%;
+        color: #333333;
+        padding-left: 24px;
+        padding-right: 16px;
+        margin-bottom: 16px; }
+        .Company_section_benefitList_item::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 3px;
+          width: 12px;
+          height: 12px;
+          background-image: url("../assets/img/icons-new-design/check--green.svg");
+          background-size: contain;
+          background-repeat: no-repeat; }
+        .Company_section_benefitList_item:nth-child(even) {
+          padding-right: 0; }
+    .Company_section_processList {
+      position: relative;
+      counter-reset: li;
+      margin-top: 24px; }
+      .Company_section_processList_item {
+        padding-left: 48px;
+        position: relative;
+        margin-bottom: 12px; }
+        .Company_section_processList_item_heading {
+          font-weight: 500;
+          font-size: .75rem;
+          line-height: 160%;
+          color: #666666; }
+        .Company_section_processList_item_description {
+          font-size: .75rem;
+          line-height: 150%;
+          color: #999999; }
+        .Company_section_processList_item::before {
+          content: counter(li,decimal-leading-zero);
+          counter-increment: li;
+          width: 32px;
+          height: 32px;
+          background-color: #B9347D;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: -6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          font-size: .75rem;
+          line-height: 160%;
+          text-align: center;
+          color: #FFFFFF;
+          z-index: 1; }
+        .Company_section_processList_item::after {
+          content: '';
+          width: 1px;
+          height: calc(100% + 16px);
+          position: absolute;
+          left: 15px;
+          top: 0;
+          border: 1px dashed #C4C4C4; }
+        .Company_section_processList_item:last-child::after {
+          content: none; }
+    .Company_section_imageSlider_slide {
+      width: 140px;
+      height: 144px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      position: relative; }
+      .Company_section_imageSlider_slide img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        object-fit: cover; }
+    .Company_section_newsSlider_slide {
+      width: 200px; }
+      .Company_section_newsSlider_slide_link {
+        display: block; }
+      .Company_section_newsSlider_slide_img {
+        width: 100%;
+        height: 140px;
+        filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.04)), drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.06)), drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+        border-radius: 4px;
+        display: block;
+        margin-bottom: 12px;
+        object-fit: cover; }
+      .Company_section_newsSlider_slide_heading {
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 150%;
+        color: #404040;
+        margin-bottom: 2px; }
+      .Company_section_newsSlider_slide_date {
+        font-size: .75rem;
+        line-height: 150%;
+        color: #999999; }
+    .Company_section_jobsSlider_slide {
+      width: 284px;
+      padding: 10px; }
+      .Company_section_jobsSlider_slide_job {
+        display: flex;
+        align-items: flex-start;
+        background-color: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        padding: 20px 16px; }
+        .Company_section_jobsSlider_slide_job_imgWrapper {
+          width: 56px;
+          height: 56px;
+          background-color: #F5F5F5;
+          border-radius: 8px;
+          padding: 16px;
+          margin-right: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+        .Company_section_jobsSlider_slide_job_img {
+          display: block; }
+        .Company_section_jobsSlider_slide_job_content {
+          width: calc(100% - 64px); }
+        .Company_section_jobsSlider_slide_job_heading {
+          margin-bottom: 2px; }
+        .Company_section_jobsSlider_slide_job_detail {
+          font-weight: 500;
+          font-size: .75rem;
+          line-height: 150%;
+          color: #666666;
+          margin-bottom: 2px; }
+        .Company_section_jobsSlider_slide_job_salary {
+          font-weight: 600;
+          font-size: .75rem;
+          line-height: 150%;
+          color: #B9347D;
+          margin-top: 12px; }
+    .Company_section_form {
+      background: #FFFFFF;
+      border: 1px solid #B9347D;
+      box-sizing: border-box;
+      border-radius: 66px;
+      padding: 0 24px;
+      position: relative; }
+      .Company_section_form input.Company_section_form_input {
+        padding: 16px 0;
+        font-size: 1rem;
+        line-height: 120%;
+        color: #999999;
+        width: calc(100% - 50px); }
+      .Company_section_form_btn {
+        width: 42px;
+        height: 42px;
+        background-color: #B9347D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        cursor: pointer; }
+        .Company_section_form_btn img {
+          display: block; }
+    .Company_section__active .Company_section_accordionIcon {
+      transform: rotate(180deg); }
+    .Company_section__active .Company_section_content {
+      max-height: 100rem;
+      transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      transition-duration: 0.5s;
+      transition-property: max-height; }
+  @media screen and (min-width: 992px) {
+    .Company_header {
+      background: transparent;
+      position: relative;
+      border-radius: 4px;
+      margin-top: 83px;
+      padding: 80px 0;
+      margin-bottom: 64px; }
+      .Company_header_img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px; }
+      .Company_header_top {
+        display: none; }
+      .Company_header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 1; }
+    .Company_card {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 58px 54px;
+      max-width: 732px;
+      margin: 0 auto; }
+      .Company_card_imgWrapper {
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+        margin-right: 24px; }
+      .Company_card_content {
+        width: calc(100% - 104px); }
+      .Company_card_heading {
+        font-size: 1.5rem;
+        margin-bottom: 21px; }
+      .Company_card_details {
+        display: none; }
+      .Company_card_tags {
+        display: none; }
+      .Company_card_desktopDetails {
+        display: flex;
+        flex-wrap: wrap; }
+      .Company_card_desktopDetail {
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 150%;
+        color: #333333;
+        padding-right: 20px;
+        margin-right: 20px;
+        position: relative; }
+        .Company_card_desktopDetail::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background-color: #333333; }
+        .Company_card_desktopDetail:last-child {
+          padding-right: 0;
+          margin-right: 0; }
+          .Company_card_desktopDetail:last-child::after {
+            content: none; }
+      .Company_card::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        border: 1px solid #fff;
+        border-radius: 8px;
+        transform: translate(-50%, -50%);
+        pointer-events: none; }
+    .Company_section {
+      margin: 40px 0;
+      padding: 40px 32px; }
+      .Company_section_heading {
+        margin-bottom: 24px; }
+      .Company_section_description {
+        font-size: 1rem; }
+        .Company_section_description ul li {
+          margin-bottom: 20px;
+          padding-left: 40px; }
+          .Company_section_description ul li::before {
+            top: 5px;
+            width: 16px;
+            height: 16px; }
+      .Company_section_tags {
+        margin-bottom: 16px; }
+      .Company_section_tag {
+        padding: 16px 40px;
+        font-size: 1rem;
+        margin-right: 16px;
+        margin-bottom: 16px; }
+      .Company_section_benefitList_item {
+        font-size: 1rem;
+        line-height: 150%;
+        padding-left: 32px;
+        padding-right: 24px;
+        margin-bottom: 24px; }
+        .Company_section_benefitList_item::before {
+          top: 4px;
+          width: 16px;
+          height: 16px; }
+      .Company_section_processList {
+        margin-top: 50px; }
+        .Company_section_processList_item {
+          padding-left: 72px;
+          margin-bottom: 20px; }
+          .Company_section_processList_item_heading {
+            font-size: 1rem;
+            margin-bottom: 4px; }
+          .Company_section_processList_item_description {
+            font-size: 1rem; }
+          .Company_section_processList_item::before {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem; }
+          .Company_section_processList_item::after {
+            left: 19px; }
+      .Company_section_accordionBtn {
+        font-size: 1rem; }
+      .Company_section_accordionIcon img {
+        width: 16px; }
+      .Company_section_imageSlider {
+        margin-top: 40px; }
+        .Company_section_imageSlider_slide {
+          width: 216px;
+          height: 220px;
+          box-shadow: 0px 6.17143px 12.3429px rgba(0, 0, 0, 0.04), 0px 0px 3.08571px rgba(0, 0, 0, 0.06), 0px 0px 1.54286px rgba(0, 0, 0, 0.04);
+          border-radius: 8px; }
+          .Company_section_imageSlider_slide img {
+            border-radius: 8px; }
+      .Company_section_newsSlider {
+        margin-top: 40px; }
+        .Company_section_newsSlider_slide {
+          width: 312px; }
+          .Company_section_newsSlider_slide_img {
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 16px; }
+          .Company_section_newsSlider_slide_heading {
+            font-size: 1rem; }
+          .Company_section_newsSlider_slide_date {
+            font-size: .875rem; }
+      .Company_section_jobsSlider {
+        margin-top: 40px; }
+        .Company_section_jobsSlider_slide {
+          width: 460px; }
+          .Company_section_jobsSlider_slide_job {
+            border-radius: 12px;
+            padding: 20px 44px; }
+            .Company_section_jobsSlider_slide_job_imgWrapper {
+              width: 80px;
+              height: 80px;
+              margin-right: 40px; }
+            .Company_section_jobsSlider_slide_job_content {
+              width: calc(100% - 120px); }
+            .Company_section_jobsSlider_slide_job_heading {
+              margin-bottom: 4px; }
+            .Company_section_jobsSlider_slide_job_detail {
+              font-size: 1rem;
+              margin-bottom: 4px; }
+            .Company_section_jobsSlider_slide_job_salary {
+              font-size: 1rem; }
+      .Company_section_formWrapper {
+        max-width: 392px;
+        margin: 0 auto; }
+      .Company_section_formHeading {
+        text-align: center; }
+      .Company_section_form {
+        margin-top: 40px; }
+        .Company_section_form input.Company_section_form_input {
+          padding: 20px 0; }
+        .Company_section_form_btn {
+          width: 50px;
+          height: 50px; }
+      .Company_section__half {
+        width: calc(50% - 12px);
+        margin: 0; }
+    .Company_sections {
+      margin: 40px 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between; } }
+
+/*# sourceMappingURL=CompanyProfile.module.css.map */

@@ -1,0 +1,53 @@
+.FilterButton {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 54px;
+  padding: 16px 40px;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 150%;
+  color: #666666;
+  min-width: 46px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .2s ease-in-out; }
+  .FilterButton_rippleContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; }
+    .FilterButton_rippleContainer span :global {
+      transform: scale(0);
+      border-radius: 100%;
+      position: absolute;
+      opacity: 0.75;
+      background-color: #E5E5E5;
+      animation: ripple 850ms; }
+  .FilterButton__pressed {
+    background: #FFE0F1;
+    color: #B9347D; }
+    .FilterButton__pressed .FilterButton_rippleContainer span :global {
+      background-color: #fff; }
+  .FilterButton__withIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .FilterButton__withIcon img {
+      margin-right: 16px;
+      max-width: 24px;
+      display: block; }
+  .FilterButton__withIconRight {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .FilterButton__withIconRight img {
+      margin-left: 16px;
+      max-width: 24px;
+      display: block; }
+  .FilterButton:hover {
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04); }
+
+/*# sourceMappingURL=FilterButton.module.css.map */

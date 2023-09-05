@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.64" height="31.488" viewBox="0 0 36.64 31.488">
+    <g id="Blockchain_white" transform="translate(0 -4.5)">
+        <path id="layer2" fill="currentColor" d="M26.908,33.6l7.9-2.634-7.9-2.634-7.9,2.634Zm1.145,2.061v10.42l8.588-2.863V32.795Zm-2.29,0-8.588-2.863v10.42l8.588,2.863ZM7.443,31.821l5.611-1.889L7.443,28.1,1.832,29.932l5.611,1.889ZM6.3,33.882,0,31.764v7.729l6.3,2.118V33.882Zm2.29,0v7.729l6.3-2.118V31.764l-6.3,2.118Z" transform="translate(0 -10.089)"/>
+        <path id="layer1" fill="currentColor" d="M25.443,8.221,31.11,6.332,25.443,4.5,19.832,6.332ZM24.3,10.282,18,8.164v7.729l6.3,2.118Zm2.29,0v7.729l6.3-2.118V8.164Z" transform="translate(-7.695)"/>
+    </g>
+</svg>

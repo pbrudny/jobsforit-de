@@ -1,0 +1,13 @@
+@import '../../styles/abstracts/colors';
+@import '../../styles/abstracts/breakpoints';
+
+.Container {
+    width: 100%;
+    padding: 0 8px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 0 25px;
+        max-width: 1267px;
+    }
+}

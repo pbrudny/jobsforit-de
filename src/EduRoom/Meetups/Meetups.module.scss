@@ -1,0 +1,83 @@
+@import '../../styles/abstracts/_colors';
+@import '../../styles/abstracts/_breakpoints';
+
+.Meetups {
+    background-color: #f5f5f5;
+    overflow: hidden;
+
+    &_top {
+        margin: 32px 0 24px;
+    }
+
+    &_item {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_top {
+            margin: 32px 0;
+        }
+
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+        }
+        
+        &_item {
+            width: calc((100% / 3) - 24px);
+            margin: 0 12px 40px;
+        }
+    }
+}
+
+.FilterBar {
+    background-color: #fff;
+    margin-top: 105px;
+    padding-bottom: 50px;
+
+    &_heading {
+        text-align: center;
+        margin: 24px 0;
+    }
+
+    &_wrapper {
+        max-width: 809px;
+        margin: auto;
+    }
+
+    &_mobileFilter {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 32px -6px 0;
+
+        &_item {
+            margin: 0 6px 20px;
+        }
+    }
+
+    &_desktopFilter {
+        display: none;
+        margin-top: 40px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        margin-top: 110px;
+        padding: 32px 0;
+        border-radius: 0 0 20px 20px;
+
+        &_heading {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        &_mobileFilter {
+            display: none;
+        }
+
+        &_desktopFilter {
+            display: block;
+        }
+    }
+}

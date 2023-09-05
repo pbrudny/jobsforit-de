@@ -1,0 +1,73 @@
+.Timeline {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; }
+  .Timeline_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .Timeline_item_circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 4px solid #FFFFFF;
+      background-color: #CDCDCD;
+      position: relative; }
+      .Timeline_item_circle::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
+    .Timeline_item_text {
+      font-size: .75rem;
+      line-height: 150%;
+      color: #333333;
+      text-align: center;
+      margin-top: 4px; }
+    .Timeline_item__completed .Timeline_item_circle {
+      background-color: #B9347D; }
+      .Timeline_item__completed .Timeline_item_circle::after {
+        content: none; }
+    .Timeline_item__current .Timeline_item_circle {
+      background-color: #B9347D; }
+    .Timeline_item__current .Timeline_item_text {
+      font-weight: 700; }
+  .Timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    width: calc(100% - 48px);
+    height: 1px;
+    background-image: linear-gradient(to right, #A8A8A8 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 11px 1px;
+    background-repeat: repeat-x;
+    z-index: -1;
+    transform: translateX(-50%); }
+  @media screen and (min-width: 992px) {
+    .Timeline {
+      margin-top: 170px; }
+      .Timeline_item_circle {
+        width: 48px;
+        height: 48px;
+        border: 8.05063px solid #FFFFFF; }
+        .Timeline_item_circle::after {
+          width: 20px;
+          height: 20px; }
+      .Timeline_item_text {
+        font-size: .875rem; }
+      .Timeline::after {
+        top: 24px;
+        width: calc(100% - 96px);
+        background-image: linear-gradient(to right, #A8A8A8 25%, rgba(255, 255, 255, 0) 0%);
+        background-size: 25px 1px; } }
+
+/*# sourceMappingURL=Timeline.module.css.map */

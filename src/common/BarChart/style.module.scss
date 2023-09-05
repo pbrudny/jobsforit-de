@@ -1,0 +1,15 @@
+@import '../../styles/abstracts/colors';
+@import '../../styles/abstracts/breakpoints';
+
+.BarChart {
+
+    canvas {
+        min-height: 250px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        canvas {
+            min-height: 350px;
+        }
+    }
+}

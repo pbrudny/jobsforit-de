@@ -1,0 +1,120 @@
+@import '../../styles/variables';
+
+.topNav {
+    top: 0px;
+    width: 100%;
+    position: sticky;
+    padding: 0 16px;
+    height: $TopNavHeight;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: background-color .2s ease-in-out;
+
+    &_light {
+        background-color: #fff;
+
+        .topNav {
+            &_menu_item {
+                color: $dark-gray;
+            }
+
+            &_button {
+                color: $dark-400;
+            }
+        }
+    }
+
+    &_dark {
+        background: $dark-300;
+
+        .topNav {
+            &_logo {
+                color: #fff;
+
+                :global(#AnimalBody),
+                :global(#AnimalHands),
+                :global(#laptopLogo) {
+                    path {
+                        fill: $dark-300 !important;
+                    }
+                }
+
+            }
+
+            &_menu_item {
+                color: $grey-300;
+            }
+
+            &_button {
+                color: $dark-400;
+            }
+        }
+    }
+
+    &_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &_group {
+        display: flex;
+        align-items: center;
+    }
+
+    &_logo {
+        display: block;
+        color: #37393f;
+
+        svg {
+            display: block;
+            width: 136px;
+            height: auto;
+        }
+    }
+
+    &_menu {
+        display: none;
+        align-items: center;
+    }
+
+    &_menu_item {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right: 40px;
+        color: $mine-shaft;
+
+        a {
+            transition: all 0.2s ease-in-out;
+        
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &_button {
+        vertical-align:top;
+        font-weight: 500;
+        color: #fff;
+        box-shadow: 0px 4px 8px rgba(185, 52, 125, 0.25);
+        background: linear-gradient(90.19deg, #CD5C9C 0.19%, #DC6747 118.99%);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &_logo {
+            svg {
+                width: 180px;
+            }
+        }
+        &_menu {
+            display: flex;
+        }
+    }
+}

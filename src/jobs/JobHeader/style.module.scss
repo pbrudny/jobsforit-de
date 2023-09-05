@@ -1,0 +1,179 @@
+@import '../../styles/variables';
+
+.JobHeader {
+  max-width: 770px;
+  margin: 0 auto;
+
+  &_dark {
+    .JobHeader {
+
+      &__list {
+        &Item {
+          &Icon {
+            color: #BDBDBD;
+          }
+
+          &Name {
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+
+  &_light {
+    .JobHeader {
+
+      &__salaryRange {
+        color: #fff;
+      }
+
+      &__detail {
+        color: #F2F2F2;
+      }
+
+      &__list {
+        &Item {
+          &Icon {
+            color: #F2F2F2;
+          }
+
+          &Name {
+            color: #F2F2F2;
+          }
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__imgWrapper {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $transition-base;
+
+    @media (min-width: $breakpoint-md) {
+      width: 90px;
+      height: 90px;
+      margin-right: 24px;
+    }
+  }
+
+  &__content {
+    width: calc(100% - 55px - 10px);
+
+    @media (min-width: $breakpoint-md) {
+      width: calc(100% - 90px - 24px);
+    }
+  }
+
+  &__heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+  }
+
+  &__detail {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+  }
+
+  &__salary {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: $primary;
+
+    @media (min-width: $breakpoint-md) {
+      margin-top: 16px;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__list {
+    margin: 32px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &Item {
+      position: relative;
+      width: 25%;
+      min-width: 80px;
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #BDBDBD;
+      }
+
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+
+      &Icon {
+        width: 16px;
+        height: 16px;
+
+        @media (min-width: $breakpoint-md) {
+          width: 20px;
+          height: 20px;
+        }
+
+        svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &Name {
+        margin-top: 6px;
+        font-weight: 500;
+        font-size: .625rem;
+        line-height: 12px;
+        text-align: center;
+
+        @media (min-width: $breakpoint-md) {
+          margin-top: 10px;
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}

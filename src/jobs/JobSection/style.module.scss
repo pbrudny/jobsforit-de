@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.JobSection {
+  max-width: 770px;
+  margin: 50px auto;
+  padding: 0 8px;
+  border-radius: 8px;
+
+  &_dark {
+    .JobSection {
+      &__heading {
+        color: #fff;
+      }
+    }
+  }
+
+  &_light {
+    .JobSection {
+      &__heading {
+        color: $mine-shaft;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 16px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+      margin: 60px auto;
+      padding: 0 24px;
+  }
+
+  &__heading {
+    margin-bottom: 24px;
+  }
+}

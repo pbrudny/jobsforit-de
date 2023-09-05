@@ -1,0 +1,10 @@
+@import '../../styles/abstracts/_colors';
+@import '../../styles/abstracts/_breakpoints';
+
+.BrandsList {
+    background-color: #f5f5f5;
+
+    &_list {
+        padding-top: 32px;
+    }
+}

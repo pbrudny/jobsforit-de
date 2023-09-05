@@ -1,0 +1,19 @@
+.Static_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 110px;
+  margin-bottom: 16px; }
+  .Static_top_btn {
+    cursor: pointer; }
+.Static__gray {
+  overflow: hidden;
+  background: #F5F5F5;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04); }
+@media screen and (min-width: 992px) {
+  .Static_top {
+    margin-top: 163px; }
+    .Static_top_btn {
+      display: none; } }
+
+/*# sourceMappingURL=Static.module.css.map */

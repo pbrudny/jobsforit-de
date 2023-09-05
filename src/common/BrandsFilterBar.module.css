@@ -1,0 +1,195 @@
+.BrandsFilterBar {
+  background: #FFFFFF;
+  margin-top: 85px;
+  padding: 50px 0; }
+  .BrandsFilterBar_description {
+    font-size: .75rem;
+    line-height: 180%;
+    color: #666666;
+    margin-top: 4px; }
+  .BrandsFilterBar_mobileFilters {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap; }
+  .BrandsFilterBar_mobileFiltersItem {
+    margin-right: 24px;
+    margin-bottom: 24px; }
+    .BrandsFilterBar_mobileFiltersItem:last-child {
+      margin-right: 0; }
+  .BrandsFilterBar_desktopFilters {
+    display: none;
+    margin-top: 32px;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .BrandsFilterBar_desktopFiltersList {
+    width: 77%; }
+  .BrandsFilterBar_filtersItem {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    .BrandsFilterBar_filtersItem_listItem {
+      margin-right: 16px; }
+      .BrandsFilterBar_filtersItem_listItem:last-child {
+        margin-right: 0; }
+    .BrandsFilterBar_filtersItem:last-child {
+      margin-bottom: 0; }
+    .BrandsFilterBar_filtersItem .filtersItem_icon {
+      display: block; }
+    .BrandsFilterBar_filtersItem .filtersItem_name {
+      width: 93px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.875rem;
+      line-height: 150%;
+      text-align: center;
+      color: #333333;
+      margin-right: 34px; }
+    .BrandsFilterBar_filtersItem .filtersItem_list {
+      display: flex;
+      align-items: center; }
+    .BrandsFilterBar_filtersItem .filtersItem_listItem {
+      margin-right: 16px; }
+      .BrandsFilterBar_filtersItem .filtersItem_listItem:last-child {
+        margin-right: 0; }
+    .BrandsFilterBar_filtersItem .filtersItem_seemore {
+      width: 32px;
+      height: 8px;
+      display: block;
+      cursor: pointer;
+      position: relative; }
+      .BrandsFilterBar_filtersItem .filtersItem_seemore span {
+        display: block;
+        margin: auto;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #B9347D; }
+        .BrandsFilterBar_filtersItem .filtersItem_seemore span::before, .BrandsFilterBar_filtersItem .filtersItem_seemore span::after {
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #B9347D;
+          position: absolute;
+          top: 0; }
+        .BrandsFilterBar_filtersItem .filtersItem_seemore span::before {
+          left: 0; }
+        .BrandsFilterBar_filtersItem .filtersItem_seemore span::after {
+          right: 0; }
+  .BrandsFilterBar_moreFiltersBtn {
+    display: flex;
+    align-items: center;
+    padding: 19px 26px;
+    color: #333333;
+    font-size: .75rem;
+    line-height: 150%;
+    font-weight: 700;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 54px;
+    cursor: pointer; }
+    .BrandsFilterBar_moreFiltersBtn img {
+      margin-left: 24px;
+      display: block; }
+  @media screen and (min-width: 992px) {
+    .BrandsFilterBar {
+      margin-top: 110px;
+      padding: 32px 0;
+      border-radius: 0 0 20px 20px; }
+      .BrandsFilterBar_description {
+        font-size: 1.125rem;
+        margin-top: 12px; }
+      .BrandsFilterBar_mobileFilters {
+        display: none; }
+      .BrandsFilterBar_desktopFilters {
+        display: flex; } }
+
+.filterPopupBtns {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px; }
+
+.filterPopupBtn {
+  padding: 12px 32px;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 150%;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 54px;
+  color: #333333;
+  text-align: center;
+  cursor: pointer; }
+  .filterPopupBtn:last-child {
+    margin-right: 0; }
+  .filterPopupBtn img {
+    margin-right: 16px;
+    max-width: 24px; }
+  .filterPopupBtn__withIcon {
+    display: flex;
+    align-items: center; }
+  .filterPopupBtn__selected {
+    background: #FFE0F1;
+    color: #B9347D; }
+  @media screen and (min-width: 992px) {
+    .filterPopupBtn {
+      margin-right: 16px;
+      margin-bottom: 16px;
+      flex: 1 0 0;
+      justify-content: center; } }
+
+.filterPopupRow {
+  margin-bottom: 48px; }
+
+.filterPopupSliderInput {
+  margin-top: 82px; }
+
+.filterPopupBottom {
+  margin-top: 108px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.filterPopupTop {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #F7F7F7; }
+
+.filterPopupMobileSlider {
+  margin-top: 85px; }
+
+.filterPopupMobileBottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 24px;
+  background-color: #fff; }
+  .filterPopupMobileBottom button {
+    width: 100%; }
+
+.filterPopupMobileExperience {
+  margin-top: 24px; }
+
+.filterPopupMobileExperienceItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; }
+  .filterPopupMobileExperienceItem img {
+    margin-right: 20px; }
+  .filterPopupMobileExperienceItem:last-child {
+    margin-bottom: 0; }
+
+.filterPopupMobileButtons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px; }
+  .filterPopupMobileButtons button {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    flex: 0 1 1; }
+
+/*# sourceMappingURL=BrandsFilterBar.module.css.map */

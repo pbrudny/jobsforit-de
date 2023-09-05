@@ -1,0 +1,64 @@
+.ArticleFirst_img {
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 24px; }
+.ArticleFirst_label {
+  font-size: .5rem;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 8px;
+  background: #B9347D;
+  border-radius: 54px; }
+.ArticleFirst_heading {
+  margin: 4px 0; }
+.ArticleFirst_details {
+  display: flex;
+  justify-content: space-between; }
+.ArticleFirst_detail {
+  font-size: .75rem;
+  line-height: 150%;
+  color: #999999;
+  margin-bottom: 24px; }
+  .ArticleFirst_detail a {
+    color: #B9347D;
+    font-weight: 500; }
+.ArticleFirst_description {
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 150%;
+  color: #333333;
+  margin-bottom: 32px; }
+.ArticleFirst_btn {
+  display: flex;
+  justify-content: center; }
+@media screen and (min-width: 992px) {
+  .ArticleFirst {
+    display: flex; }
+    .ArticleFirst_group {
+      width: 50%; }
+      .ArticleFirst_group:first-child {
+        padding-right: 30px; }
+      .ArticleFirst_group:last-child {
+        padding-left: 30px; }
+    .ArticleFirst_img {
+      height: 392px;
+      width: 100%;
+      margin-bottom: 0;
+      border-radius: 12px; }
+    .ArticleFirst_label {
+      font-size: .75rem;
+      line-height: 200%;
+      padding: 4px 16px; }
+    .ArticleFirst_heading {
+      margin: 16px 0; }
+    .ArticleFirst_detail {
+      font-size: .875rem;
+      margin-bottom: 40px; }
+    .ArticleFirst_description {
+      font-size: .875rem;
+      margin-bottom: 40px; }
+    .ArticleFirst_btn {
+      justify-content: flex-start; } }
+
+/*# sourceMappingURL=ArticleFirst.module.css.map */

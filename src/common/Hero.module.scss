@@ -1,0 +1,94 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.Hero {
+  transition: background-color .2s ease-in-out;
+
+  @media (min-width: $breakpoint-md) {
+    border-radius: 0 0 20px 20px;
+  }
+
+  &_light {
+    background-color: transparent;
+
+    .Hero {
+      &__description {
+        color: #000;
+      }
+    }
+  }
+
+  &_dark {
+    background-color: $dark-300;
+
+    .Hero {
+      &__description {
+        color: #fff;
+      }
+    }
+  }
+
+  &__cols {
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-end;
+    }
+  }
+
+  &__col {
+
+    @media (min-width: $breakpoint-md) {
+      width: 50%;
+    }
+
+    &_content {
+      padding: 16px 0;
+
+      @media (min-width: $breakpoint-md) {
+        max-width: 480px;
+        padding: 48px 24px;
+      }
+    }
+
+    &_img {
+      display: none;
+
+      @media (min-width: $breakpoint-md) {
+        position: relative;
+        display: block;
+      }
+    }
+  }
+
+  &__heading {
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__description {
+    display: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.1;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}

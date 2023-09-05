@@ -1,0 +1,82 @@
+.SideNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  width: 304px;
+  background-color: #fff;
+  z-index: 999;
+  transition: transform .3s ease-in-out;
+  transform: translateX(-100%); }
+  .SideNav__open {
+    transform: translateX(0); }
+  .SideNav_top {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    padding: 20px 28px; }
+  .SideNav_arrowBtn {
+    width: 15px;
+    height: 15px;
+    display: block;
+    cursor: pointer; }
+    .SideNav_arrowBtn img {
+      display: block;
+      width: 100%; }
+  .SideNav_closeBtn {
+    display: none;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: pointer; }
+    .SideNav_closeBtn::before, .SideNav_closeBtn::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: #666666; }
+    .SideNav_closeBtn::before {
+      transform: translate(-50%, -50%) rotate(45deg); }
+    .SideNav_closeBtn::after {
+      transform: translate(-50%, -50%) rotate(-45deg); }
+  .SideNav_menuItem {
+    padding: 24px;
+    border-bottom: 1px solid #F7F7F7;
+    color: #333333;
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 150%; }
+    .SideNav_menuItem a {
+      display: flex;
+      align-items: center; }
+  .SideNav_menuItem_icon {
+    display: block;
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 16px; }
+  .SideNav_secondMenuItem {
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 150%;
+    color: #666666;
+    margin-top: 27px;
+    padding: 0 24px; }
+  @media screen and (min-width: 992px) {
+    .SideNav {
+      left: auto;
+      right: 0;
+      transform: translateX(100%); }
+      .SideNav__open {
+        transform: translateX(0); }
+      .SideNav_top {
+        display: flex;
+        justify-content: flex-end;
+        padding: 18px; }
+      .SideNav_arrowBtn {
+        display: none; }
+      .SideNav_closeBtn {
+        display: block; } }
+
+/*# sourceMappingURL=SideNav.module.css.map */

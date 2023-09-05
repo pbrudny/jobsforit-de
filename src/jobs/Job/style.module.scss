@@ -1,0 +1,339 @@
+@import '../../styles/variables';
+
+.Job {
+    border-radius: 12px 12px 0 0;
+
+    &__dark {
+        background-color: $dark-300;
+
+        .Job {
+            &_description {
+                color: #E0E0E0;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            &_benefitList {
+                &_item {
+                    color: #E0E0E0;
+                }
+            }
+
+            &_bottom {
+                background-color: $dark-300;
+            }
+
+            &_applyPopupText {
+                color: #fff;
+            }
+
+            &_applyPopupSideInfo {
+                color: $grey-300;
+            }
+        }
+    }
+
+    &__light {
+        background-color: #fff;
+
+        .Job {
+            &_description {
+                color: $dark-gray;
+            }
+
+            &_benefitList {
+                &_item {
+                    color: $dark-gray;
+                }
+            }
+
+            &_bottom {
+                background-color: #fff;
+            }
+
+            &_applyPopupText {
+                color: $dark-gray;
+            }
+
+            &_applyPopupSideInfo {
+                color: $dark-gray;
+            }
+        }
+    }
+
+    &_cardContainer {
+        perspective: 3000px;
+
+        &__flipped {
+            .Job_card {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    &_card {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+
+    &_header {
+        background: linear-gradient(180deg, #FF9A9E 19.03%, #FAD0C4 116.68%, #FAD0C4 117.66%);
+        border-radius: 12px;
+        padding: 24px 8px 70px;
+        z-index: 2;
+        transform: rotateY(0deg);
+
+        @media (min-width: $breakpoint-sm) {
+            padding: 24px;
+        }
+
+        &_group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+    
+        &_icons {
+            display: flex;
+            align-items: center;
+
+            &_item {
+                margin-right: 24px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &_icon {
+            cursor: pointer;
+            
+            img {
+                display: block;
+            }
+        }
+    }
+
+    &_map {
+        position: relative;
+        transform: rotateY(180deg);
+
+        &_icon {
+            position: absolute;
+            top: 24px;
+            right: 8px;
+            cursor: pointer;
+            z-index: 900;
+
+            @media (min-width: $breakpoint-md) {
+                right: 24px;
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    &_header,
+    &_map {
+        backface-visibility: hidden;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &_cardContainer,
+    &_header,
+    &_map {
+        width: 100%;
+        height: 310px;
+
+        @media (min-width: $breakpoint-sm) {
+            height: 360px;
+        }
+    }
+
+    &_messageWrapper {
+        margin-top: 32px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &_heading {
+        margin-bottom: 20px;
+    }
+
+    &_description {
+        font-weight: 400;
+        font-size: .75rem;
+        line-height: 160%;
+
+        ul {
+
+            li {
+                margin-bottom: 16px;
+                padding-left: 24px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                    width: 12px;
+                    height: 12px;
+                    background-image: url('../../assets/img/icons-new-design/list-bullet--yellow.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &_benefitList {
+        display: flex;
+        flex-wrap: wrap;
+
+        &_item {
+            position: relative;
+            width: 50%;
+            font-weight: 500;
+            font-size: .75rem;
+            line-height: 160%;
+            padding-left: 24px;
+            padding-right: 16px;
+            margin-bottom: 16px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 3px;
+                width: 12px;
+                height: 12px;
+                background-image: url('../../assets/img/icons-new-design/check--green.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &:nth-child(even) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &_bottom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        bottom: 0;
+        z-index: 900;
+        padding: 24px;
+    }
+
+    &_applyPopupText {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 150%;
+        text-align: center;
+        margin-top: 20px;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &_applyPopupSideInfo {
+        font-size: .75rem;
+        line-height: 150%;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_header {
+
+            &_group {
+                justify-content: flex-end;
+                margin-bottom: 32px;
+            }
+            
+        }
+
+        &_closeBtn {
+            display: none;
+        }
+
+        &_messageWrapper {
+            margin-bottom: 20px;
+        }
+
+        &_heading {
+            margin-bottom: 24px;
+        }
+    
+        &_section {
+            margin: 24px 0;
+            padding: 32px;
+        }
+
+        &_description {
+            font-size: .875rem;
+            line-height: 140%;
+
+            ul {
+
+                li {
+                    margin-bottom: 16px;
+                    padding-left: 32px;
+    
+                    &::before {
+                        top: 3px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+
+        &_benefitList {
+            display: flex;
+            flex-wrap: wrap;
+    
+            &_item {
+                font-size: .875rem;
+                line-height: 150%;
+                padding-left: 32px;
+                padding-right: 24px;
+                margin-bottom: 16px;
+    
+                &::before {
+                    top: 3px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+
+        &_applyPopupText {
+            font-size: 1rem;
+            margin-top: 24px;
+        }
+    
+        &_applyPopupSideInfo {
+            font-size: .875rem;
+        }
+    }
+}

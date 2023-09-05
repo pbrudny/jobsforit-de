@@ -1,0 +1,76 @@
+@import '../../styles/abstracts/_colors';
+@import '../../styles/abstracts/_breakpoints';
+
+.MeetupItem {
+    display: block;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 24px 16px;
+    transition: box-shadow .2s ease-in-out;
+
+    &_top {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #E6E6E6;
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    &_label {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: $medium-red-violet;
+        border-radius: 54px;
+        padding: 6px 8px;
+        font-weight: 700;
+        font-size: .5rem;
+        text-align: center;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    &_date {
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 150%;
+        text-align: center;
+        color: $medium-red-violet;
+    }
+
+    &_type {
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 150%;
+        text-align: center;
+        color: $dusty-gray;
+    }
+
+    &_heading {
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 150%;
+        color: $mine-shaft;
+        margin-bottom: 8px;
+    }
+
+    &_details {
+        font-weight: 500;
+        font-size: .75rem;
+        line-height: 150%;
+        color: $dove-gray
+    }
+
+    &:hover {
+        box-shadow: -1px 13px 20px rgba(0, 0, 0, 0.05), 6px 7px 20px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_label {
+            font-size: .75rem;
+            line-height: 200%;
+            padding: 4px 16px;
+        }
+    }
+}

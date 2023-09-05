@@ -1,0 +1,155 @@
+.PricingTableItem {
+  width: 100%;
+  padding: 18px 14px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  position: relative; }
+  .PricingTableItem_label {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    max-width: 100%;
+    border-radius: 14px;
+    background-color: #B9347D;
+    padding: 2px 28px;
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 160%;
+    color: #FFFFFF;
+    text-align: center;
+    transform: translate(-50%, -50%); }
+  .PricingTableItem_top {
+    padding: 10px 0;
+    border-bottom: 1px solid #E6E6E6; }
+  .PricingTableItem_title {
+    font-size: .875rem;
+    line-height: 150%;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 8px; }
+  .PricingTableItem_priceText {
+    text-align: center; }
+  .PricingTableItem_oldPrice {
+    font-size: .625rem;
+    line-height: 230%;
+    color: #999999;
+    text-decoration: line-through;
+    margin-right: 4px; }
+  .PricingTableItem_price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 150%;
+    color: #000000;
+    margin-right: 2px; }
+  .PricingTableItem_billed {
+    font-weight: 500;
+    font-size: .625rem;
+    line-height: 230%;
+    color: #000000; }
+  .PricingTableItem_promoText {
+    font-weight: 500;
+    font-size: .625rem;
+    line-height: 150%;
+    color: #00D48B;
+    text-align: center; }
+  .PricingTableItem_list {
+    margin-top: 20px; }
+    .PricingTableItem_list_item {
+      position: relative;
+      padding-left: 24px;
+      font-weight: 500;
+      font-size: .625rem;
+      line-height: 180%;
+      color: #666666;
+      margin-bottom: 12px; }
+      .PricingTableItem_list_item::before {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 4px;
+        width: 10px;
+        height: 10px;
+        background-image: url("../assets/img/icons-new-design/check--green.svg");
+        background-size: contain;
+        background-repeat: no-repeat; }
+      .PricingTableItem_list_item:last-child {
+        margin-bottom: 0; }
+  .PricingTableItem_bottom {
+    margin-top: 21px;
+    display: flex;
+    justify-content: center; }
+  .PricingTableItem__bordered {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border: 1px solid #B9347D; }
+  .PricingTableItem__large {
+    padding: 24px 16px; }
+    .PricingTableItem__large .PricingTableItem_title {
+      font-size: 1rem; }
+    .PricingTableItem__large .PricingTableItem_oldPrice {
+      font-size: .75rem; }
+    .PricingTableItem__large .PricingTableItem_price {
+      font-size: 1.5rem; }
+    .PricingTableItem__large .PricingTableItem_billed {
+      font-size: .75rem; }
+    .PricingTableItem__large .PricingTableItem_promoText {
+      font-size: .75rem; }
+    .PricingTableItem__large .PricingTableItem_list_item {
+      font-size: .75rem; }
+      .PricingTableItem__large .PricingTableItem_list_item::before {
+        top: 5px;
+        width: 12px;
+        height: 12px; }
+    .PricingTableItem__large .PricingTableItem_bottom {
+      margin-top: 24px; }
+  @media screen and (min-width: 992px) {
+    .PricingTableItem {
+      padding: 30px 14px 40px; }
+      .PricingTableItem_label {
+        padding: 6px 22px;
+        border-radius: 24px;
+        font-size: .875rem; }
+      .PricingTableItem_top {
+        padding: 0 0 16px; }
+      .PricingTableItem_title {
+        font-size: 1rem;
+        margin-bottom: 10px; }
+      .PricingTableItem_oldPrice {
+        font-size: .75rem; }
+      .PricingTableItem_price {
+        font-size: 1.75rem; }
+      .PricingTableItem_billed {
+        font-size: .75rem; }
+      .PricingTableItem_promoText {
+        font-size: .75rem;
+        margin-top: 4px; }
+      .PricingTableItem_list_item {
+        font-size: .75rem; }
+        .PricingTableItem_list_item::before {
+          top: 5px; }
+      .PricingTableItem_bottom {
+        margin-top: 36px; }
+      .PricingTableItem__large {
+        padding: 40px 16px; }
+        .PricingTableItem__large .PricingTableItem_top {
+          padding: 0 0 20px; }
+        .PricingTableItem__large .PricingTableItem_title {
+          font-size: 1.25rem;
+          margin-bottom: 6px; }
+        .PricingTableItem__large .PricingTableItem_oldPrice {
+          font-size: .875rem; }
+        .PricingTableItem__large .PricingTableItem_price {
+          font-size: 2rem; }
+        .PricingTableItem__large .PricingTableItem_billed {
+          font-size: .875rem; }
+        .PricingTableItem__large .PricingTableItem_promoText {
+          font-size: .875rem;
+          margin-top: 4px; }
+        .PricingTableItem__large .PricingTableItem_list_item {
+          font-size: .875rem; }
+          .PricingTableItem__large .PricingTableItem_list_item::before {
+            top: 7px; }
+        .PricingTableItem__large .PricingTableItem_bottom {
+          margin-top: 40px; } }
+
+/*# sourceMappingURL=PricingTableItem.module.css.map */

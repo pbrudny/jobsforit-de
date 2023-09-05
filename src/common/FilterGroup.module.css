@@ -1,0 +1,54 @@
+.FilterGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .FilterGroup_listItem {
+    margin-right: 16px; }
+    .FilterGroup_listItem:last-child {
+      margin-right: 0; }
+  .FilterGroup_icon {
+    display: block; }
+  .FilterGroup_name {
+    width: 93px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 150%;
+    text-align: center;
+    color: #333333;
+    margin-right: 34px; }
+  .FilterGroup_list {
+    display: flex;
+    align-items: center; }
+  .FilterGroup_listItem {
+    margin-right: 16px; }
+    .FilterGroup_listItem:last-child {
+      margin-right: 0; }
+  .FilterGroup_seemore {
+    width: 32px;
+    height: 8px;
+    display: block;
+    cursor: pointer;
+    position: relative; }
+    .FilterGroup_seemore span {
+      display: block;
+      margin: auto;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #B9347D; }
+      .FilterGroup_seemore span::before, .FilterGroup_seemore span::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #B9347D;
+        position: absolute;
+        top: 0; }
+      .FilterGroup_seemore span::before {
+        left: 0; }
+      .FilterGroup_seemore span::after {
+        right: 0; }
+
+/*# sourceMappingURL=FilterGroup.module.css.map */

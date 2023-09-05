@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.FilterButton {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 54px;
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    min-width: 46px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all $transition-base;
+
+    &_light {
+        color: $dove-gray;
+        border: 1px solid $dove-gray;
+    }
+
+    &_dark {
+        border: 1px solid $grey-300;
+        color: $grey-300;
+
+        &.FilterButton__pressed {
+            color: #333333;
+            background-color: #fff;
+        }
+    }
+
+    &_rippleContainer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        span :global {
+            transform: scale(0);
+            border-radius: 100%;
+            position: absolute;
+            opacity: 0.75;
+            background-color: $mercury;
+            animation: ripple 850ms;
+        }
+    }
+
+    &__pressed {
+        background: $dove-gray;
+        color: $mercury;
+
+        .FilterButton {
+            &_rippleContainer {
+
+                span :global {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    &__withIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img,
+        svg {
+            margin-right: 12px;
+            max-width: 24px;
+            display: block;
+        }
+    }
+
+    &__withIconRight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img,
+        svg {
+            margin-left: 12px;
+            max-width: 24px;
+            display: block;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        background: #FFFFFF;
+        border: 1px solid $grey-300;
+        color: $dark-gray;
+    }
+}

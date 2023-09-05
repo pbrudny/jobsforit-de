@@ -1,0 +1,133 @@
+@import "abstracts/_colors";
+@import 'abstracts/_breakpoints';
+
+.form-check-input[type="radio"]:checked + label:after,
+.form-check-input[type="radio"].with-gap:checked + label:before,
+.form-check-input[type="radio"].with-gap:checked + label:after,
+label.btn input[type="radio"]:checked + label:after,
+label.btn input[type="radio"].with-gap:checked + label:before,
+label.btn input[type="radio"].with-gap:checked + label:after {
+  border-color: $primary;
+}
+
+.form-check-input[type="radio"].with-gap:checked + label:after,
+label.btn input[type="radio"].with-gap:checked + label:after {
+  background-color: $primary;
+}
+
+.md-form input:not([type]):focus:not([readonly]),
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="password"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="email"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="url"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="time"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="date"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+.md-form
+  input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="tel"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="number"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="search"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="search-md"]:focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+  border-color: $primary;
+  box-shadow: 0 1px 0 0 $primary;
+}
+
+.md-form input:not([type]):focus:not([readonly]) + label,
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="password"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="email"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="datetime"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="datetime-local"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="number"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="search"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="search-md"]:focus:not([readonly]) + label,
+.md-form textarea.md-textarea:focus:not([readonly]) + label,
+.select-wrapper > label.mdb-main-label.active {
+  color: $primary;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.no-input-margins {
+    .md-form {
+        margin: 0;
+
+        .form-control {
+            padding: 0;
+            margin: 0;
+        }
+
+        button.mdb-autocomplete-clear {
+            top: 0;
+        }
+    }
+}
+
+.select-wrapper .select-dropdown {
+    display: block;
+}
+
+.form-check-input[type="checkbox"]:checked + label:before,
+label.btn input[type="checkbox"]:checked + label:before {
+  border-right: 2px solid $primary;
+  border-bottom: 2px solid $primary;
+}
+
+@media screen and (max-width: 991px) {
+  .md-form label,
+  .md-form input:not([type]):focus:not([readonly]) + label,
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="password"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="email"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="datetime"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="datetime-local"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form
+  input[type="number"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form
+  input[type="search"]:not(.browser-default):focus:not([readonly])
+  + label,
+.md-form input[type="search-md"]:focus:not([readonly]) + label,
+.md-form textarea.md-textarea:focus:not([readonly]) + label,
+.select-wrapper > label.mdb-main-label.active,
+.form-check-input[type="radio"]:not(:checked) + label, .form-check-input[type="radio"]:checked + label, label.btn input[type="radio"]:not(:checked) + label, label.btn input[type="radio"]:checked + label {
+    font-size: .875rem;
+  }
+}
+
+.md-form label,
+.select-wrapper > label.mdb-main-label {
+  font-weight: 500;
+}

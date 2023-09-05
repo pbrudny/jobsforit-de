@@ -1,0 +1,54 @@
+@import '../../styles/abstracts/colors';
+@import '../../styles/abstracts/breakpoints';
+
+.Hamburger {
+    width: 18px;
+    height: 14px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &_dark {
+        &::before,
+        &::after,
+        span {
+            background-color: $grey-300;
+        }
+    }
+
+    &_light {
+        &::before,
+        &::after,
+        span {
+            background-color: $dove-gray;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+    }
+    &::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &::after {
+        bottom: 0;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+    }
+    @media screen and (min-width: $breakpoint-md) {
+        width: 24px;
+        height: 17px;
+    }
+}

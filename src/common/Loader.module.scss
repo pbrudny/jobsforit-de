@@ -1,0 +1,50 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+@keyframes :global(loaderPulse) {
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Loader {
+    width: 78px;
+    height: 16px;
+    position: relative;
+
+    span :global {
+        position: absolute;
+        left: 31px;
+        top: 0;
+        height: 100%;
+        width: 16px;
+        border-radius: 50%;
+        background-color: $primary;
+        animation: .75s loaderPulse linear -0.16s infinite;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 16px;
+        border-radius: 50%;
+        background-color: $primary;
+    }
+
+    &::before :global {
+        left: 0;
+        animation: .75s loaderPulse linear -0.32s infinite;
+    }
+
+    &::after :global {
+        right: 0;
+        animation: .75s loaderPulse linear 0s infinite;
+    }
+
+}

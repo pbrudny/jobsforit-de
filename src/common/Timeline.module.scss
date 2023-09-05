@@ -1,0 +1,114 @@
+@import '../styles/variables';
+
+.Timeline {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &_item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        
+        &_circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid #FFFFFF;
+            background-color: #CDCDCD;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &_text {
+            font-size: .75rem;
+            line-height: 150%;
+            color: #333333;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        &__completed {
+            .Timeline_item_circle {
+                background-color: $primary;
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        &__current {
+            .Timeline_item_circle {
+                background-color: $primary;
+            }
+
+            .Timeline_item_text {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        width: calc(100% - 48px);
+        height: 1px;
+        background-image: linear-gradient(to right, #A8A8A8 50%, rgba(255, 255, 255, 0) 0%);
+        background-position: top;
+        background-size: 11px 1px;
+        background-repeat: repeat-x;
+        transform: translateX(-50%);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        margin-top: 84px;
+
+        &_item {
+
+            &_circle {
+                width: 48px;
+                height: 48px;
+                border: 8.05063px solid #FFFFFF;
+
+                &::after {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            &_text {
+                font-size: 1rem;
+            }
+
+            &__current {
+                .Timeline_item_text {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+        
+        &::after {
+            top: 24px;
+            width: calc(100% - 96px);
+            background-image: linear-gradient(to right, #A8A8A8 25%, rgba(255, 255, 255, 0) 0%);
+            background-size: 25px 1px;
+        }
+    }
+}

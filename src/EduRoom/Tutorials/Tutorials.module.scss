@@ -1,0 +1,105 @@
+@import '../../styles/variables';
+
+.Tutorials {
+    overflow: hidden;
+
+    &__dark {
+        .Tutorials {
+            &_heading {
+                color: #fff;
+            }
+        }
+    }
+
+    &_top {
+        margin: 32px 0 24px;
+    }
+
+    &_heading {
+        transition: color $transition-base;
+    }
+
+    &_item {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_top {
+            margin: 32px 0;
+        }
+
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+        }
+        
+        &_item {
+            width: calc((100% / 3) - 24px);
+            margin: 0 12px 40px;
+        }
+    }
+}
+
+.FilterBar {
+    position: relative;
+
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &_heading {
+        color: #fff;
+        text-align: center;
+        margin: 24px 0;
+    }
+
+    &_subheading {
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: 140%;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: 32px;
+    }
+
+    &_wrapper {
+        position: relative;
+        z-index: 1;
+        max-width: 809px;
+        margin: auto;
+    }
+
+    &_filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 32px -6px 0;
+
+        &Item {
+            margin: 0 6px 20px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 32px 0 64px;
+        border-radius: 0 0 20px 20px;
+
+        &_heading {
+            margin-top: 120px;
+            margin-bottom: 40px;
+        }
+
+        &_subheading {
+            font-size: 1.5rem;
+            margin-bottom: 120px;
+        }
+    }
+}

@@ -1,0 +1,344 @@
+@import '../../styles/abstracts/_colors';
+@import '../../styles/abstracts/_breakpoints';
+
+.PostJob {
+    background-color: #fff;
+    padding-bottom: 60px;
+
+    &_mobileTop {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 110px;
+
+        &_btn {
+            cursor: pointer;
+        }
+
+        &_label {
+            font-size: .75rem;
+            line-height: 150%;
+            color: $dusty-gray;
+        }
+    }
+
+    &_top {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+
+        &_description {
+            font-weight: 500;
+            font-size: .75rem;
+            line-height: 150%;
+            color: $dove-gray;
+            text-align: center;
+            margin-top: 4px;
+        }
+    }
+
+    &_section {
+        margin: 72px 0;
+
+        &_content {
+            margin-top: 60px;
+        }
+
+        input[type='checkbox'],
+        input[type='email'],
+        input[type='number'],
+        input[type='password'],
+        input[type='text'],
+        input[type='tel'],
+        select,
+        textarea
+        {
+            width: 100%;
+            font-size: .875rem;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+            color: $mine-shaft;
+        }
+
+        input[type='checkbox'],
+        input[type='email'],
+        input[type='number'],
+        input[type='password'],
+        input[type='text'],
+        input[type='tel'],
+        select {
+            font-weight: 700;
+        }
+
+        .md-form input[type=text]:focus {
+
+        box-shadow: 0 1px 0 0 green !important;
+        
+        border-bottom: 1px solid green !important;
+        
+        }
+    }
+
+    &_sectionHeading {
+        margin-bottom: 32px;
+    }
+
+    &_row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+        margin-top: 16px;
+    }
+
+    &_input {
+        width: 100%;
+
+        &_label {
+            font-weight: 500;
+            font-size: .875rem;
+            line-height: 150%;
+            color: $dusty-gray;
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 0.6rem;
+        }
+    }
+
+    &_radio {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &_checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 12px;
+
+        & > div {
+            width: 50%;
+            padding-right: 10px;
+            margin-bottom: 10px;
+            
+            input[type="checkbox"] + label {
+                font-size: .875rem;
+                line-height: 150%;
+                color: rgba(0, 0, 0, 0.87);
+            }
+
+            input[type="checkbox"]:checked + label {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &_salary {
+        display: flex;
+        justify-content: space-between;
+
+        &_item {
+            width: calc(50% - 10px);
+        }
+    }
+
+    &_imageUploader {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &_applyOptions {
+        margin-top: 60px;
+
+        &_label {
+            margin-bottom: 35px;
+        }
+
+        form {
+            margin-bottom: 34px;
+
+            & > div {
+                margin-bottom: 12px;
+            }
+
+            label {
+                font-size: .875rem;
+                line-height: 150%;
+                color: #333;
+            }
+
+            input[type="radio"]:checked + label {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &_buttons {
+        width: 100%;
+        max-width: 904px;
+        margin: 40px auto 0;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        &_mobileTop {
+            display: none;
+        }
+        
+        &_top {
+            margin-top: 170px;
+
+            &_description {
+                font-size: 1rem;
+                margin-top: 12px;
+            }
+        }
+
+        &_section {
+            margin: 120px 0;
+
+            input[type='checkbox'],
+            input[type='email'],
+            input[type='number'],
+            input[type='password'],
+            input[type='text'],
+            input[type='tel'],
+            select,
+            textarea {
+                font-size: 1rem;
+            }
+        }
+
+        &_sectionHeading {
+            margin-bottom: 72px;
+        }
+
+        &_row {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 0;
+
+            &::after {
+                content: '';
+                width: 312px;
+            }
+
+            &__twoThird {
+                width: calc(100% - 400px);
+            }
+        }
+
+        &_input {
+            width: 312px;
+        }
+
+        &_imageUploaders {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &_imageUploader {
+        }
+
+        &_checkboxGroup {
+            width: 50%;
+            padding-right: 15px;
+        }
+
+        &_buttons {
+            margin: 60px auto 0;
+            flex-direction: row;
+            justify-content: space-between;
+
+            button {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.SkillInput {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 2px rgba(0, 0, 0, 0.06),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    margin-top: 40px;
+
+    &_removeBtn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 12px;
+        height: 12px;
+        background-image: url('../../assets/img/icons-new-design/remove--gray.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+
+    &_icon {
+        width: 36px;
+        &__grayscale {
+            filter: grayscale(1) brightness(1.1);
+        }
+    }
+
+    &_level {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    &_button {
+        text-align: center;
+        width: 48px;
+        cursor: pointer;
+
+        &:hover {
+            .SkillInput {
+                &_icon {
+                    &__grayscale {
+                        filter: initial;
+                    }
+                }
+            }
+        }
+    }
+
+    &_label {
+        font-size: .75rem;
+        line-height: 150%;
+        color: #999999;
+        text-align: center;
+        display: block;
+        margin-top: 4px;
+    }
+
+    &_addMore {
+        margin-top: 32px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        margin-right: 60px;
+
+        &_addMore {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.SalaryRange {
+  &_dark {
+    color: $primary;
+  }
+
+  &_light {
+    color: $light-red-violet;
+  }
+}

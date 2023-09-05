@@ -1,0 +1,7 @@
+.BarChart canvas {
+  min-height: 250px; }
+@media screen and (min-width: 992px) {
+  .BarChart canvas {
+    min-height: 350px; } }
+
+/*# sourceMappingURL=BarChart.module.css.map */

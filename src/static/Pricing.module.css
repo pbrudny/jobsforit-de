@@ -1,0 +1,306 @@
+.Pricing_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px; }
+.Pricing_heading {
+  text-align: center;
+  margin-top: 32px; }
+.Pricing_plans {
+  background: #F5F5F5; }
+  .Pricing_plans_desktopBoxes {
+    display: none; }
+  .Pricing_plans_slide {
+    padding: 36px 0 54px;
+    max-width: 265px; }
+.Pricing_uspSection {
+  padding: 40px 0;
+  border-bottom: 1px solid #E6E6E6; }
+  .Pricing_uspSection_heading {
+    text-align: center;
+    margin-bottom: 24px; }
+  .Pricing_uspSection_boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .Pricing_uspSection_box {
+    width: 100%;
+    max-width: 232px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    padding: 14px 16px; }
+    .Pricing_uspSection_box_img {
+      width: 52px;
+      height: 52px;
+      background: #FEEDE0;
+      border-radius: 4px;
+      margin-right: 16px; }
+    .Pricing_uspSection_box_heading {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 150%;
+      color: #333333;
+      margin-bottom: 4px; }
+    .Pricing_uspSection_box_description {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 150%;
+      color: #666666; }
+    .Pricing_uspSection_box:last-child {
+      margin-bottom: 0; }
+.Pricing_faq {
+  padding: 40px 0;
+  border-bottom: 1px solid #E6E6E6; }
+  .Pricing_faq_heading {
+    text-align: center;
+    margin-bottom: 24px; }
+  .Pricing_faq_list_item {
+    padding: 16px 0;
+    border-bottom: 1px solid #E6E6E6; }
+    .Pricing_faq_list_item_top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer; }
+    .Pricing_faq_list_item_icon {
+      display: block;
+      transition: transform .3s ease-in-out; }
+    .Pricing_faq_list_item_heading {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 150%;
+      color: #333333;
+      padding-right: 15px;
+      max-width: calc(100% - 20px); }
+    .Pricing_faq_list_item_bottom {
+      max-height: 0;
+      overflow: hidden;
+      text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      transition-duration: 0.5s;
+      transition-property: max-height; }
+    .Pricing_faq_list_item_list {
+      position: relative;
+      counter-reset: li;
+      margin-top: 24px; }
+      .Pricing_faq_list_item_list_item {
+        padding-left: 48px;
+        position: relative;
+        margin-bottom: 12px; }
+        .Pricing_faq_list_item_list_item_heading {
+          font-weight: 500;
+          font-size: .75rem;
+          line-height: 160%;
+          color: #666666; }
+        .Pricing_faq_list_item_list_item_description {
+          font-size: .75rem;
+          line-height: 150%;
+          color: #999999; }
+        .Pricing_faq_list_item_list_item::before {
+          content: counter(li,decimal-leading-zero);
+          counter-increment: li;
+          width: 32px;
+          height: 32px;
+          background-color: #B9347D;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: -6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          font-size: .75rem;
+          line-height: 160%;
+          text-align: center;
+          color: #FFFFFF; }
+        .Pricing_faq_list_item_list_item::after {
+          content: '';
+          width: 1px;
+          height: calc(100% + 16px);
+          position: absolute;
+          left: 15px;
+          top: 0;
+          border: 1px dashed #C4C4C4;
+          z-index: -1; }
+        .Pricing_faq_list_item_list_item:last-child::after {
+          content: none; }
+    .Pricing_faq_list_item__active .Pricing_faq_list_item_icon {
+      transform: rotate(180deg); }
+    .Pricing_faq_list_item__active .Pricing_faq_list_item_bottom {
+      max-height: 100rem;
+      transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      transition-duration: 0.5s;
+      transition-property: max-height; }
+.Pricing_partners {
+  padding: 40px 0;
+  border-bottom: 1px solid #E6E6E6; }
+  .Pricing_partners_heading {
+    text-align: center;
+    margin-bottom: 24px; }
+  .Pricing_partners_slider {
+    padding-bottom: 26px; }
+  .Pricing_partners_slide {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+.Pricing_testimonials {
+  padding: 40px 0;
+  border-bottom: 1px solid #E6E6E6; }
+  .Pricing_testimonials_heading {
+    text-align: center;
+    margin-bottom: 24px; }
+  .Pricing_testimonials_slider {
+    padding: 10px 0 26px; }
+  .Pricing_testimonials_slide {
+    padding: 0 25px; }
+  .Pricing_testimonials_person {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center; }
+    .Pricing_testimonials_person_imgWrapper {
+      width: 144px;
+      height: 144px;
+      margin: 0 auto 24px;
+      position: relative; }
+      .Pricing_testimonials_person_imgWrapper::before {
+        content: '';
+        width: 88px;
+        height: 80px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-image: url("../assets/img/pattern--gray.svg");
+        background-size: cover;
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.04)), drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)), drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+        border-radius: 8px; }
+    .Pricing_testimonials_person_img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 124px;
+      height: 124px;
+      display: block;
+      object-fit: cover;
+      filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.04)), drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)), drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+      border-radius: 8px; }
+    .Pricing_testimonials_person_name {
+      font-weight: 700;
+      font-size: .875rem;
+      line-height: 150%;
+      color: #B9347D; }
+    .Pricing_testimonials_person_role {
+      font-weight: 500;
+      font-size: .875rem;
+      line-height: 150%;
+      color: #999999; }
+    .Pricing_testimonials_person_description {
+      font-size: .75rem;
+      line-height: 150%;
+      color: #333333;
+      margin-top: 4px; }
+@media screen and (min-width: 992px) {
+  .Pricing_top {
+    margin-bottom: 40px; }
+  .Pricing_heading {
+    margin-top: 60px; }
+  .Pricing_plans {
+    padding: 60px 0; }
+    .Pricing_plans_slider {
+      display: none; }
+    .Pricing_plans_desktopBoxes {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .Pricing_plans_desktopBox {
+      width: 255px;
+      margin-right: 48px; }
+      .Pricing_plans_desktopBox:last-child {
+        margin-right: 0; }
+      .Pricing_plans_desktopBox__large {
+        width: 288px; }
+  .Pricing_uspSection {
+    padding: 60px 0; }
+    .Pricing_uspSection_heading {
+      margin-bottom: 60px; }
+    .Pricing_uspSection_boxes {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1120px;
+      margin: 0 auto; }
+    .Pricing_uspSection_box {
+      max-width: 288px;
+      padding: 16px; }
+      .Pricing_uspSection_box_heading {
+        font-size: 1.25rem;
+        margin-bottom: 2px; }
+      .Pricing_uspSection_box_description {
+        font-size: .875rem; }
+      .Pricing_uspSection_box:last-child {
+        margin-bottom: 16px; }
+  .Pricing_faq {
+    padding: 60px 0;
+    border-bottom: none; }
+    .Pricing_faq_heading {
+      margin-bottom: 60px; }
+    .Pricing_faq_list_item {
+      padding: 26px 32px; }
+      .Pricing_faq_list_item_icon {
+        width: 16px; }
+      .Pricing_faq_list_item_heading {
+        font-size: 1rem; }
+      .Pricing_faq_list_item_list {
+        margin-top: 50px; }
+        .Pricing_faq_list_item_list_item {
+          padding-left: 72px;
+          margin-bottom: 20px; }
+          .Pricing_faq_list_item_list_item_heading {
+            font-size: 1rem;
+            margin-bottom: 4px; }
+          .Pricing_faq_list_item_list_item_description {
+            font-size: 1rem; }
+          .Pricing_faq_list_item_list_item::before {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem; }
+          .Pricing_faq_list_item_list_item::after {
+            left: 19px; }
+  .Pricing_partners {
+    padding: 60px 0;
+    border-bottom: none; }
+    .Pricing_partners_heading {
+      margin-bottom: 40px; }
+    .Pricing_partners_slider {
+      padding-bottom: 52px; }
+    .Pricing_partners_slide {
+      width: 120px;
+      height: 120px; }
+  .Pricing_testimonials {
+    padding: 60px 0;
+    border-bottom: none; }
+    .Pricing_testimonials_heading {
+      margin-bottom: 40px; }
+    .Pricing_testimonials_slider {
+      padding-bottom: 52px; }
+    .Pricing_testimonials_person {
+      padding: 40px 24px; }
+      .Pricing_testimonials_person_name {
+        font-size: 1rem; }
+      .Pricing_testimonials_person_role {
+        font-size: 1rem;
+        margin-top: 4px; }
+      .Pricing_testimonials_person_description {
+        font-size: .875rem;
+        margin-top: 24px; } }
+
+/*# sourceMappingURL=Pricing.module.css.map */

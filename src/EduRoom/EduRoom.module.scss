@@ -1,0 +1,97 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.EduRoom {
+    
+    &_top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    &_heading {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    &_item {
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        padding: 32px 16px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 24px;
+
+        &_group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_img {
+            max-height: 124px;
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        &_heading {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        &_description {
+            font-weight: 500;
+            font-size: .75rem;
+            line-height: 150%;
+            text-align: center;
+            color: $mine-shaft;
+            margin-bottom: 12px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_top {
+            margin-bottom: 48px;
+        }
+
+        &_heading {
+            margin-bottom: 40px;
+        }
+
+        &_item {
+            flex-direction: row;
+            align-items: center;
+            padding: 48px 104px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+
+            &_group {
+                width: 50%;
+                display: block;
+
+                &:first-child {
+                    padding-right: 24px;
+                }
+            }
+
+            &_img {
+                max-height: none;
+            }
+
+            &_heading {
+                text-align: left;
+                margin-bottom: 12px;
+            }
+
+            &_description {
+                font-size: .875rem;
+                text-align: left;
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

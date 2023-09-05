@@ -1,0 +1,20 @@
+.Text {
+  font-size: .75rem;
+  line-height: 160%;
+  color: #333333; }
+  .Text_1 {
+    font-weight: 600; }
+  .Text_2 {
+    font-weight: 400; }
+  .Text_3 {
+    font-size: .625rem; }
+  @media screen and (min-width: 992px) {
+    .Text {
+      font-size: .875rem; }
+      .Text_1, .Text_2 {
+        font-weight: 500; }
+      .Text_3 {
+        font-size: .875rem;
+        font-weight: 500; } }
+
+/*# sourceMappingURL=Text.module.css.map */

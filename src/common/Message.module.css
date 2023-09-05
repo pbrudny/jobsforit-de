@@ -1,0 +1,41 @@
+.Message {
+  padding: 6px 28px 10px;
+  position: relative;
+  width: 185px; }
+  .Message_img {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transform: translate(-50%, -50%); }
+  .Message_text {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 160%;
+    color: #333333; }
+  .Message__short {
+    background: #F2F2F2;
+    border-radius: 12px; }
+  .Message__long {
+    width: 285px;
+    padding: 8px 24px;
+    background-color: #FFFFFF;
+    border-radius: 12px; }
+    .Message__long .Message_text {
+      text-align: center; }
+  @media screen and (min-width: 992px) {
+    .Message {
+      padding: 14px 60px;
+      width: 272px; }
+      .Message_img {
+        width: 48px;
+        height: 48px; }
+      .Message_text {
+        font-size: .875rem;
+        line-height: 150%; }
+      .Message__long {
+        width: 410px;
+        padding: 20px 32px; } }
+
+/*# sourceMappingURL=Message.module.css.map */

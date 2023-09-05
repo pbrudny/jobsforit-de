@@ -1,0 +1,56 @@
+.MeetupItem {
+  display: block;
+  background-color: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 24px 16px;
+  transition: box-shadow .2s ease-in-out; }
+  .MeetupItem_top {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+    margin-bottom: 16px; }
+  .MeetupItem_label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #B9347D;
+    border-radius: 54px;
+    padding: 6px 8px;
+    font-weight: 700;
+    font-size: .5rem;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase; }
+  .MeetupItem_date {
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 150%;
+    text-align: center;
+    color: #B9347D; }
+  .MeetupItem_type {
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 150%;
+    text-align: center;
+    color: #999999; }
+  .MeetupItem_heading {
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 150%;
+    color: #333333;
+    margin-bottom: 8px; }
+  .MeetupItem_details {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 150%;
+    color: #666666; }
+  .MeetupItem:hover {
+    box-shadow: -1px 13px 20px rgba(0, 0, 0, 0.05), 6px 7px 20px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.05); }
+  @media screen and (min-width: 992px) {
+    .MeetupItem_label {
+      font-size: .75rem;
+      line-height: 200%;
+      padding: 4px 16px; } }
+
+/*# sourceMappingURL=MeetupItem.module.css.map */

@@ -1,0 +1,196 @@
+.PostJob_mobileTop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 110px; }
+  .PostJob_mobileTop_btn {
+    cursor: pointer; }
+  .PostJob_mobileTop_label {
+    font-size: .75rem;
+    line-height: 150%;
+    color: #999999; }
+.PostJob_top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px; }
+  .PostJob_top_description {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 150%;
+    color: #666666;
+    text-align: center;
+    margin-top: 4px; }
+.PostJob_message {
+  margin-bottom: 40px; }
+.PostJob_section {
+  margin: 32px 0; }
+  .PostJob_section_content {
+    margin-top: 60px; }
+  .PostJob_section input[type='checkbox'],
+  .PostJob_section input[type='email'],
+  .PostJob_section input[type='number'],
+  .PostJob_section input[type='password'],
+  .PostJob_section input[type='text'],
+  .PostJob_section input[type='tel'],
+  .PostJob_section select,
+  .PostJob_section textarea {
+    width: 100%;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #333333; }
+  .PostJob_section .md-form input[type=text]:focus {
+    box-shadow: 0 1px 0 0 green !important;
+    border-bottom: 1px solid green !important; }
+.PostJob_row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 16px; }
+.PostJob_input {
+  width: 100%; }
+  .PostJob_input_label {
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 150%;
+    color: #999999;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 0.6rem; }
+.PostJob_radio {
+  display: flex;
+  justify-content: space-between; }
+.PostJob_checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px; }
+  .PostJob_checkboxes > div {
+    width: 50%;
+    padding-right: 10px;
+    margin-bottom: 10px; }
+    .PostJob_checkboxes > div input[type="checkbox"] + label {
+      font-size: .875rem;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.87); }
+    .PostJob_checkboxes > div input[type="checkbox"]:checked + label {
+      font-weight: 700; }
+.PostJob_salary {
+  display: flex;
+  justify-content: space-between; }
+  .PostJob_salary_item {
+    width: calc(50% - 10px); }
+.PostJob_imageUploader {
+  margin-bottom: 32px; }
+  .PostJob_imageUploader:last-child {
+    margin-bottom: 0; }
+.PostJob_applyOptions {
+  margin-top: 60px; }
+  .PostJob_applyOptions_label {
+    margin-bottom: 35px; }
+  .PostJob_applyOptions form {
+    margin-bottom: 34px; }
+    .PostJob_applyOptions form > div {
+      margin-bottom: 12px; }
+    .PostJob_applyOptions form label {
+      font-size: .875rem;
+      line-height: 150%;
+      color: #333; }
+    .PostJob_applyOptions form input[type="radio"]:checked + label {
+      font-weight: 700; }
+.PostJob_buttons {
+  width: 100%;
+  max-width: 904px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column; }
+  .PostJob_buttons button {
+    margin-bottom: 16px; }
+    .PostJob_buttons button:last-child {
+      margin-bottom: 0; }
+@media screen and (min-width: 992px) {
+  .PostJob_mobileTop {
+    display: none; }
+  .PostJob_top {
+    margin-top: 64px; }
+    .PostJob_top_description {
+      font-size: 1rem;
+      margin-top: 12px; }
+  .PostJob_message {
+    margin-bottom: 64px; }
+  .PostJob_section {
+    margin: 60px 0; }
+    .PostJob_section input[type='checkbox'],
+    .PostJob_section input[type='email'],
+    .PostJob_section input[type='number'],
+    .PostJob_section input[type='password'],
+    .PostJob_section input[type='text'],
+    .PostJob_section input[type='tel'],
+    .PostJob_section select,
+    .PostJob_section textarea {
+      font-size: 1rem; }
+  .PostJob_row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0; }
+    .PostJob_row::after {
+      content: '';
+      width: 312px; }
+  .PostJob_input {
+    width: 312px; }
+  .PostJob_imageUploaders {
+    display: flex;
+    justify-content: flex-start; }
+  .PostJob_imageUploader {
+    margin-right: 64px; }
+    .PostJob_imageUploader:last-child {
+      margin-right: 0; }
+  .PostJob_checkboxGroup {
+    width: 50%;
+    padding-right: 15px; }
+  .PostJob_buttons {
+    margin: 60px auto;
+    flex-direction: row;
+    justify-content: space-between; }
+    .PostJob_buttons button {
+      margin-bottom: 0; } }
+
+.SkillInput {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  margin-top: 40px; }
+  .SkillInput_icon {
+    width: 36px; }
+    .SkillInput_icon__grayscale {
+      filter: grayscale(1) brightness(1.1); }
+  .SkillInput_level {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px; }
+  .SkillInput_button {
+    text-align: center;
+    width: 48px;
+    cursor: pointer; }
+    .SkillInput_button:hover .SkillInput_icon__grayscale {
+      filter: initial; }
+  .SkillInput_label {
+    font-size: .75rem;
+    line-height: 150%;
+    color: #999999;
+    text-align: center;
+    display: block;
+    margin-top: 4px; }
+  .SkillInput_addMore {
+    margin-top: 32px; }
+  @media screen and (min-width: 992px) {
+    .SkillInput {
+      margin-right: 60px; }
+      .SkillInput_addMore {
+        margin-top: 0; } }
+
+/*# sourceMappingURL=style.module.css.map */

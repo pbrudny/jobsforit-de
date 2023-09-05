@@ -1,0 +1,30 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.Static {
+    &_top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        &_btn {
+            cursor: pointer;
+        }
+
+    }
+    
+    &__gray {
+        overflow: hidden;
+        background: #F5F5F5;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        &_top {
+            &_btn {
+                display: none;
+            }
+        }
+    }
+}

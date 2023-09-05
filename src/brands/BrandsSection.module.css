@@ -1,0 +1,34 @@
+.BrandsSection {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #E6E6E6; }
+  .BrandsSection_heading {
+    margin-bottom: 24px; }
+  .BrandsSection_item {
+    margin-bottom: 20px; }
+  .BrandsSection_loadmore {
+    font-weight: bold;
+    font-size: .875rem;
+    line-height: 150%;
+    color: #B9347D;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer; }
+  .BrandsSection:last-child {
+    margin-bottom: 0; }
+  @media screen and (min-width: 992px) {
+    .BrandsSection_heading {
+      margin-bottom: 32px; }
+    .BrandsSection_items {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px; }
+    .BrandsSection_item {
+      width: calc(25% - 20px);
+      margin: 0 10px;
+      max-width: 312px;
+      margin-bottom: 40px; }
+    .BrandsSection_loadmore {
+      font-size: 1rem; } }
+
+/*# sourceMappingURL=BrandsSection.module.css.map */

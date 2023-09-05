@@ -1,0 +1,90 @@
+.ImageUploader {
+  min-width: 312px; }
+  .ImageUploader_label {
+    font-weight: 600;
+    font-size: .875rem;
+    line-height: 170%;
+    color: #666666;
+    margin-bottom: 20px; }
+  .ImageUploader_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; }
+  .ImageUploader_uploadBtn {
+    cursor: pointer; }
+    .ImageUploader_uploadBtn_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    .ImageUploader_uploadBtn_circle {
+      width: 80px;
+      height: 80px;
+      background-color: #FEEDE0;
+      box-shadow: 0px 14.2857px 28.5714px rgba(254, 197, 206, 0.18), 0px 2.85714px 8.57143px rgba(254, 197, 206, 0.12), 0px 0px 1.42857px rgba(0, 0, 0, 0.04);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .ImageUploader_uploadBtn_icon {
+      display: block; }
+    .ImageUploader_uploadBtn_name {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 160%;
+      text-align: center;
+      color: #333333;
+      margin-top: 8px; }
+    .ImageUploader_uploadBtn_label {
+      font-size: .75rem;
+      line-height: 120%;
+      text-align: center;
+      color: #999999;
+      margin-top: 8px; }
+    .ImageUploader_uploadBtn__dragging .ImageUploader_uploadBtn_circle {
+      background-color: #FF9A9E; }
+  .ImageUploader_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    overflow: hidden;
+    margin-bottom: 16px; }
+    .ImageUploader_item_img {
+      width: 100px;
+      height: 100px;
+      box-shadow: 0px 14.2857px 28.5714px rgba(254, 197, 206, 0.18), 0px 2.85714px 8.57143px rgba(254, 197, 206, 0.12), 0px 0px 1.42857px rgba(0, 0, 0, 0.04);
+      border-radius: 50%;
+      display: block;
+      object-fit: cover; }
+    .ImageUploader_item_name {
+      font-weight: 500;
+      font-size: .75rem;
+      line-height: 160%;
+      text-align: center;
+      color: #333333;
+      margin-top: 8px; }
+    .ImageUploader_item_btns {
+      margin-top: 8px;
+      display: flex;
+      align-items: center; }
+    .ImageUploader_item_btn {
+      width: 22px;
+      height: 20px;
+      margin-right: 8px;
+      cursor: pointer; }
+      .ImageUploader_item_btn img {
+        display: block; }
+      .ImageUploader_item_btn:last-child {
+        margin-right: 0; }
+    .ImageUploader_item:last-child {
+      margin-right: 0; }
+  .ImageUploader_addMoreButton {
+    margin-top: 36px; }
+  @media screen and (min-width: 992px) {
+    .ImageUploader_item {
+      margin-right: 32px; }
+    .ImageUploader_addMoreButton {
+      margin-left: 32px; } }
+
+/*# sourceMappingURL=ImageUploader.module.css.map */

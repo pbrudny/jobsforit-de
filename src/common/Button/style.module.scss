@@ -1,0 +1,93 @@
+@import '../../styles/variables';
+
+@keyframes :global(ripple) {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+.Button {
+    font-size: .875rem;
+    padding: 12px 16px;
+    line-height: 1;
+    border-radius: 66px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .2s ease-in-out;
+
+    &_rippleContainer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        span :global {
+            transform: scale(0);
+            border-radius: 100%;
+            position: absolute;
+            opacity: 0.75;
+            background-color: #fff;
+            animation: ripple 850ms;
+        }
+    }
+
+    &_secondary ,
+    &:disabled {
+        color: $dusty-gray;
+        border: 1px solid #E6E6E6;
+
+        .Button_rippleContainer {
+            span {
+                background-color: $mercury;
+            }
+        }
+    }
+
+    &_primary {
+        color: #fff;
+        font-weight: 600;
+        background-color: $primary;
+        box-shadow: 0px 4px 8px rgba($primary, 0.25);
+    }
+
+    &_mid {
+        width: 100%;
+    }
+
+    &_long {
+        width: 100%;
+    }
+
+    &:hover {
+        box-shadow: 0px 16px 24px rgba($primary, 0.09), 0px 2px 6px rgba($primary, 0.07), 0px 0px 1px rgba($primary, 0.07);
+
+        &.Button_primary {
+            color: #fff;
+        }
+
+        &.Button_secondary,
+        &:disabled {
+            color: $dusty-gray;
+        }
+    }
+
+    @media screen and (min-width: 360px) {
+        font-size: 1rem;
+
+        &_mid {
+            min-width: 312px;
+            width: auto;
+        }
+    
+        &_long {
+            min-width: 312px;
+            width: auto;
+        }
+    }
+
+}

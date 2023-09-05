@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+
+.JobsList {
+    padding-top: 32px;
+
+    &__fullHeight {
+        @media (min-width: $breakpoint-md) {
+            height: calc(100vh - #{$TopNavHeight} - #{$FilterBarDesktopHeight});
+            overflow: hidden;
+        }
+    }
+
+    &__dark {
+        .JobsList {
+            &_columns {
+                background-color: $dark-400;
+            }
+
+            &_columnJobsList,
+            &_columnSingleJob {
+                scrollbar-color: $dark-400 $dark-300;
+
+                &::-webkit-scrollbar-track {
+                    background: $dark-400;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $dark-300;
+                    border: 2px solid $dark-400;
+                }
+            }
+        }
+    }
+
+    &__light {
+        .JobsList {
+            &_columnJobsList,
+            &_columnSingleJob {
+                scrollbar-color: $mercury $mercury;
+
+                &::-webkit-scrollbar-track {
+                    background: $mercury;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $dusty-gray;
+                    border: 2px solid $mercury;
+                }
+            }
+        }
+    }
+
+    &_fullWidthContainer {
+        max-width: 100%;
+        @media (min-width: $breakpoint-md) {
+            position: relative;
+            z-index: 1000;
+        }
+    }
+
+    &_top {
+        margin-bottom: 20px;
+    }
+
+    &_list {
+        margin: 0 auto;
+    }
+
+    &_columns {
+        display: flex;
+        align-items: flex-start;
+        height: 100%;
+    }
+
+    &_columnJobsList {
+        width: 100%;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    &_columnSingleJob {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        bottom: 0;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+
+        &__hidden {
+            display: none;
+        }
+
+        &_loader {
+            display: none;
+
+            @media screen and (min-width: $breakpoint-md) {
+                display: flex;
+                justify-content: center;
+                padding: 64px 32px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        
+        &_top {
+            margin-bottom: 60px;
+        }
+
+        &_columnJobsList {
+            width: 42%;
+            padding-right: 32px;
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+            }
+        }
+
+        &_columnSingleJob {
+            position: static;
+            width: 58%;
+            scrollbar-width: thin;
+            z-index: 0;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+            }
+
+            &__hidden {
+                display: block;
+            }
+        }
+    }
+}

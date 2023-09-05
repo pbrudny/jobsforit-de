@@ -1,0 +1,9 @@
+.Container {
+  width: 100%;
+  padding: 0 25px;
+  margin: 0 auto; }
+  @media screen and (min-width: 992px) {
+    .Container {
+      max-width: 1267px; } }
+
+/*# sourceMappingURL=Container.module.css.map */

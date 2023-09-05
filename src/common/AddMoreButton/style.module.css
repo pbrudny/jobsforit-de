@@ -1,0 +1,14 @@
+.AddMoreButton {
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 150%;
+  color: #B9347D;
+  cursor: pointer;
+  text-align: center;
+  width: 100%; }
+  @media screen and (min-width: 992px) {
+    .AddMoreButton {
+      text-align: left;
+      width: auto; } }
+
+/*# sourceMappingURL=AddMoreButton.module.css.map */

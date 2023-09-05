@@ -1,0 +1,42 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.Heading {
+    font-weight: 700;
+
+    &_black {
+        color: $mine-shaft;
+    }
+
+    &_white {
+        color: #fff;
+    }
+    
+    &_h1 {
+        font-size: 1.5rem;
+        line-height: 120%;
+    }
+    &_h2 {        
+        line-height: 150%;
+    }
+    &_h3 {
+        font-size: 1rem;
+        line-height: 170%;
+    }
+    &_regular {
+        font-weight: 400;
+    }
+    @media screen and (min-width: $breakpoint-md) {
+        &_h1 {
+            font-size: 4rem;
+        }
+        &_h2 {
+            font-size: 3rem;
+            line-height: 120%;
+        }
+        &_h3 {
+            font-size: 1.5rem;
+            line-height: 120%;
+        }
+    }
+}

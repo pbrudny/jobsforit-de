@@ -1,0 +1,34 @@
+.BrandItem {
+  background: #FFFFFF;
+  border-radius: 8px;
+  transition: box-shadow .2s ease-in-out; }
+  .BrandItem_wrapper {
+    padding: 24px 20px; }
+  .BrandItem_img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 12px; }
+  .BrandItem_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .BrandItem_logo {
+    display: block;
+    width: 42px; }
+  .BrandItem_heading {
+    font-weight: bold;
+    font-size: .875rem;
+    line-height: 170%;
+    color: #333333; }
+  .BrandItem_category {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: 150%;
+    color: #999999; }
+  .BrandItem:hover {
+    box-shadow: -1px 13px 20px rgba(0, 0, 0, 0.05), 6px 7px 20px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.05); }
+
+/*# sourceMappingURL=BrandItem.module.css.map */

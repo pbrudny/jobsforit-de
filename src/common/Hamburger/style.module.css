@@ -1,0 +1,34 @@
+.Hamburger {
+  width: 18px;
+  height: 14px;
+  display: block;
+  position: relative;
+  cursor: pointer; }
+  .Hamburger::before, .Hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #666666; }
+  .Hamburger::before {
+    top: 50%;
+    transform: translateY(-50%); }
+  .Hamburger::after {
+    bottom: 0; }
+  .Hamburger span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #666666; }
+  @media screen and (min-width: 992px) {
+    .Hamburger {
+      width: 36px;
+      height: 25px; }
+      .Hamburger::before, .Hamburger::after,
+      .Hamburger span {
+        height: 4px; } }
+
+/*# sourceMappingURL=Hamburger.module.css.map */

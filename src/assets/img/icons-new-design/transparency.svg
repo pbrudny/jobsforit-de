@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_23" data-name="Rectangle 23" width="48" height="48" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_45" data-name="Group 45" clip-path="url(#clip-path)">
+    <path id="Path_274" data-name="Path 274" d="M7.483,4.135H40.558a3.317,3.317,0,0,1,3.308,3.307V40.517a3.317,3.317,0,0,1-3.308,3.308H7.483a3.317,3.317,0,0,1-3.307-3.308V7.442A3.317,3.317,0,0,1,7.483,4.135Z" fill="#e0e0de"/>
+    <path id="Path_275" data-name="Path 275" d="M33.116,16.538A16.537,16.537,0,1,1,16.579,0,16.537,16.537,0,0,1,33.116,16.538Z" fill="#ff7000"/>
+    <path id="Path_276" data-name="Path 276" d="M29.809,16.537a13.23,13.23,0,1,1-13.23-13.23A13.23,13.23,0,0,1,29.809,16.537Z" fill="#ff923d"/>
+    <path id="Path_277" data-name="Path 277" d="M33.943,7.442h7.442V9.1H33.943Z" fill="#c4c4c4"/>
+    <path id="Path_278" data-name="Path 278" d="M35.6,11.576h5.788V13.23H35.6Z" fill="#c4c4c4"/>
+    <path id="Path_279" data-name="Path 279" d="M35.6,15.711h5.788v1.654H35.6Z" fill="#c4c4c4"/>
+    <path id="Path_280" data-name="Path 280" d="M35.6,19.845h5.788V21.5H35.6Z" fill="#c4c4c4"/>
+    <path id="Path_281" data-name="Path 281" d="M35.6,23.979h5.788v1.654H35.6Z" fill="#c4c4c4"/>
+    <path id="Path_282" data-name="Path 282" d="M36.424,28.114h4.961v1.654H36.424Z" fill="#c4c4c4"/>
+    <path id="Path_283" data-name="Path 283" d="M6.656,35.556H28.982v1.654H6.656Z" fill="#c4c4c4"/>
+    <path id="Path_284" data-name="Path 284" d="M6.656,38.863H32.289v1.654H6.656Z" fill="#c4c4c4"/>
+    <path id="Path_285" data-name="Path 285" d="M10.791,23.152H22.367v1.654H10.791Z" fill="#636363"/>
+    <path id="Path_286" data-name="Path 286" d="M10.79,8.269H22.367V9.922H10.79Z" fill="#636363"/>
+    <path id="Path_287" data-name="Path 287" d="M11,16H22.576v1.654H11Z" fill="#636363"/>
+    <path id="Path_288" data-name="Path 288" d="M29.809,26.46,36.424,33.9h.992a1.633,1.633,0,0,1,1.158.5l8.6,8.6a2.924,2.924,0,0,1-2.067,4.961,3.263,3.263,0,0,1-2.067-.827l-8.6-8.6a1.632,1.632,0,0,1-.5-1.158v-.992l-6.615-7.442" fill="#92563a"/>
+    <path id="Path_289" data-name="Path 289" d="M48,45.065A3.263,3.263,0,0,0,47.173,43l-8.6-8.6a1.633,1.633,0,0,0-1.158-.5h-.992l-2.481,2.481v.992a1.632,1.632,0,0,0,.5,1.158l8.6,8.6a2.9,2.9,0,0,0,4.134,0A3.263,3.263,0,0,0,48,45.065Z" fill="#92563a"/>
+  </g>
+</svg>

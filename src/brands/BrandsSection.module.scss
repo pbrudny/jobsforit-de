@@ -1,0 +1,54 @@
+@import '../styles/abstracts/_colors';
+@import '../styles/abstracts/_breakpoints';
+
+.BrandsSection {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #E6E6E6;
+
+    &_heading {
+        margin-bottom: 24px;
+    }
+
+    &_item {
+        margin-bottom: 20px;
+    }
+
+    &_loadmore {
+        font-weight: bold;
+        font-size: .875rem;
+        line-height: 150%;
+        color: $medium-red-violet;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+
+        &_heading {
+            margin-bottom: 32px;
+        }
+
+        &_items {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        &_item {
+            width: calc(25% - 20px);
+            margin: 0 10px;
+            max-width: 312px;
+            margin-bottom: 40px;
+        }
+
+        &_loadmore {
+            font-size: 1rem;
+        }
+    }
+}

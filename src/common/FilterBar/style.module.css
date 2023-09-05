@@ -1,0 +1,106 @@
+.FilterBar {
+  background: #FFFFFF;
+  margin-top: 85px;
+  padding: 50px 0; }
+  .FilterBar_description {
+    font-size: .75rem;
+    line-height: 180%;
+    color: #666666;
+    margin-top: 4px; }
+  .FilterBar_mobileFilters {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap; }
+  .FilterBar_mobileFiltersItem {
+    margin-right: 24px;
+    margin-bottom: 24px; }
+    .FilterBar_mobileFiltersItem:last-child {
+      margin-right: 0; }
+  .FilterBar_desktopFilters {
+    display: none;
+    margin-top: 32px;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .FilterBar_desktopFiltersList {
+    width: 77%; }
+  .FilterBar_filtersItem {
+    margin-bottom: 16px; }
+    .FilterBar_filtersItem:last-child {
+      margin-bottom: 0; }
+  @media screen and (min-width: 992px) {
+    .FilterBar {
+      margin-top: 110px;
+      padding: 32px 0;
+      border-radius: 0 0 20px 20px; }
+      .FilterBar_description {
+        font-size: 1.125rem;
+        margin-top: 12px; }
+      .FilterBar_mobileFilters {
+        display: none; }
+      .FilterBar_desktopFilters {
+        display: flex; } }
+
+.filterPopupBtns {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px; }
+
+.filterPopupBtn:last-child {
+  margin-right: 0; }
+@media screen and (min-width: 992px) {
+  .filterPopupBtn {
+    margin-right: 16px;
+    margin-bottom: 16px;
+    flex: 1 0 0; } }
+
+.filterPopupRow {
+  margin-bottom: 48px; }
+
+.filterPopupSliderInput {
+  margin-top: 82px; }
+
+.filterPopupBottom {
+  margin-top: 108px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.filterPopupTop {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #F7F7F7; }
+
+.filterPopupMobileSlider {
+  margin-top: 85px; }
+
+.filterPopupMobileBottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 24px;
+  background-color: #fff; }
+  .filterPopupMobileBottom button {
+    width: 100%; }
+
+.filterPopupMobileExperience {
+  margin-top: 24px; }
+
+.filterPopupMobileExperienceItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; }
+  .filterPopupMobileExperienceItem img {
+    margin-right: 20px; }
+  .filterPopupMobileExperienceItem:last-child {
+    margin-bottom: 0; }
+
+.filterPopupMobileButtons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px; }
+  .filterPopupMobileButtons button {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    flex: 0 1 1; }
+
+/*# sourceMappingURL=FilterBar.module.css.map */
