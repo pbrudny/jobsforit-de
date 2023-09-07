@@ -15,13 +15,6 @@
 
 This repository contains a real-world job board application with a legacy codebase built using React, Contentful, and MobX. The application is a fully functional job listing platform that allows employers to post job offers and job seekers to apply. This project serves as a base for implementing AI-powered refactoring to improve code quality, maintainability, and performance.
 
-## Features
-
-- **Employer Dashboard**: Add, Edit, Delete job postings.
-- **Job Seeker Dashboard**: View jobs, apply, and manage applications.
-- **Admin Dashboard**: Oversee all activities and manage users.
-- **Search and Filtering**: Locate jobs based on criteria such as skills, location, and salary.
-
 ## Tech Stack
 
 - **Frontend**: React.js
@@ -66,5 +59,41 @@ Before you start, make sure you have the following prerequisites installed:
     ```bash
     yarn start
     ```
-# jobsforit-de
-# jobsforit-de
+
+## Contributing
+
+Contributions to this project are highly encouraged! Please follow these guidelines to ensure a smooth contribution process.
+
+All contributions should be made in consultation with ChatGPT. The commit messages should include links to the 'share chat' from ChatGPT where the changes were discussed.
+
+### Steps for Contributing
+
+1. **Fork the Repository**
+   - Fork this repository to your GitHub account.
+
+2. **Clone Your Fork**
+    ```bash
+    git clone https://github.com/your-username/jobsforit-de.git
+    ```
+
+3. **Create a New Branch**
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+4. **Make Changes**
+   - Consult with ChatGPT and make your changes.
+
+5. **Commit Your Changes**
+   - Make sure to include the 'share chat' link from ChatGPT in the commit message.
+
+6. **Push to Your Fork**
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+7. **Create a Pull Request**
+   - Open a pull request from your fork to the original repository.
+
+
+
