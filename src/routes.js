@@ -1,31 +1,34 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import JobsContainer from "./jobs/JobsContainer/JobsContainer";
-import NotFound from "./pages/NotFound";
-import Imprint from "./pages/Imprint";
-import DataSecurity from "./pages/DataSecurity";
-import Terms from "./pages/Terms";
-import ChoosePlanContainer from "./jobs/ChoosePlanContainer/ChoosePlanContainer";
-import NewJobContainer from "./jobs/NewJobContainer/index";
-import InvoiceDetails from "./jobs/NewJobContainer/InvoiceDetails";
-import Pricing from './static/Pricing';
-import About from './static/About';
-import AboutOld from './pages/About.js';
-import Company from './static/CompanyProfile';
-import BrandsList from "./brands/BrandsList";
-import EduRoom from './EduRoom/EduRoom';
-import Tutorials from './EduRoom/Tutorials/Tutorials';
-import Meetups from './EduRoom/Meetups/Meetups';
-import Meetup from './EduRoom/Meetups/Meetup';
-import StudyMaterial from './EduRoom/StudyMaterial/StudyMaterial';
-import StudyMaterialSingle from './EduRoom/StudyMaterial/StudyMaterialSingle';
-import Blog from './Blog/Blog';
-import BlogSingle from "./Blog/BlogSingle";
-import Token from "./Token/J4IT";
-import Statistics from './statistics/Statistics';
+
+const JobsContainer = lazy(() => import("./jobs/JobsContainer/JobsContainer"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Imprint = lazy(() => import("./pages/Imprint"));
+const DataSecurity = lazy(() => import("./pages/DataSecurity"));
+const Terms = lazy(() => import("./pages/Terms"));
+const ChoosePlanContainer = lazy(() => import("./jobs/ChoosePlanContainer/ChoosePlanContainer"));
+const NewJobContainer = lazy(() => import("./jobs/NewJobContainer/index"));
+const InvoiceDetails = lazy(() => import("./jobs/NewJobContainer/InvoiceDetails"));
+const Pricing = lazy(() => import('./static/Pricing'));
+const About = lazy(() => import('./static/About'));
+const AboutOld = lazy(() => import('./pages/About.js'));
+const Company = lazy(() => import('./static/CompanyProfile'));
+const BrandsList = lazy(() => import("./brands/BrandsList"));
+const EduRoom = lazy(() => import('./EduRoom/EduRoom'));
+const Tutorials = lazy(() => import('./EduRoom/Tutorials/Tutorials'));
+const Meetups = lazy(() => import('./EduRoom/Meetups/Meetups'));
+const Meetup = lazy(() => import('./EduRoom/Meetups/Meetup'));
+const StudyMaterial = lazy(() => import('./EduRoom/StudyMaterial/StudyMaterial'));
+const StudyMaterialSingle = lazy(() => import('./EduRoom/StudyMaterial/StudyMaterialSingle'));
+const Blog = lazy(() => import('./Blog/Blog'));
+const BlogSingle = lazy(() => import("./Blog/BlogSingle"));
+const Token = lazy(() => import("./Token/J4IT"));
+const Statistics = lazy(() => import('./statistics/Statistics'));
 
 const Routes = () => (
+  <Suspense fallback={<div>Loading...</div>}>
     <Switch>
+      <Route exact path="/" component={JobsContainer} />
       <Route exact path="/filters/:tech/:city" component={JobsContainer} />
       <Route exact path="/filters/:tech" component={JobsContainer} />
       <Route exact path="/jobs/:id" component={JobsContainer} />
@@ -33,9 +36,7 @@ const Routes = () => (
       <Route exact path="/choose-plan" component={ChoosePlanContainer} />
       <Route exact path="/add-job-invoice" component={InvoiceDetails} />
       <Route exact path="/add-job" component={NewJobContainer} />
-      {/*<Route exact path="/token" component={AboutOld} />*/}
       <Route exact path="/pricing" component={Pricing} />
-      <Route exact path="/" component={JobsContainer} />
       <Route exact path="/about" component={About} />
       <Route exact path="/company" component={Company} />
       <Route exact path="/brand-room" component={BrandsList} />
@@ -51,8 +52,9 @@ const Routes = () => (
       <Route exact path="/statistics" component={Statistics} />
       <Route exact path="/terms-and-conditions" component={Terms} />
       <Route exact path="/privacy-policy" component={DataSecurity} />
-      <Route exact path="/*" component={NotFound} />
+      <Route path="*" component={NotFound} />
     </Switch>
+  </Suspense>
 );
 
 export default Routes;

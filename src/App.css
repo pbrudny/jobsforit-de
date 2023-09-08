@@ -1,97 +1,75 @@
-/* @import '~antd/dist/antd.css'; */
-
+/* Global styles */
 body {
-  background-color: #f3f6f8;;
+  background-color: #f3f6f8;
 }
 
-#usercentrics-button {
-  display: none;
+/* Ant Design Button Customizations */
+:root {
+  --btn-primary-color: #7BCADE;
+  --btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  --btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .App {
   text-align: center;
 }
 
-.ant-btn-primary {
-  color: #fff;
-  background-color: #7BCADE;
-  border-color: #7BCADE;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+#usercentrics-button {
+  display: none;
 }
 
-.ant-btn:active {
+.ant-btn-primary,
+.ant-btn:active,
+.ant-btn:focus {
   color: #fff;
-  background-color: #7BCADE;
-  border-color: #7BCADE;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  background-color: var(--btn-primary-color);
+  border-color: var(--btn-primary-color);
+  text-shadow: var(--btn-text-shadow);
+  box-shadow: var(--btn-shadow);
 }
 
 .ant-btn:hover {
-  border: solid 1px #7BCADE;
+  border: solid 1px var(--btn-primary-color);
 }
 
-.ant-btn:focus {
-  color: #fff;
-  background-color: #7BCADE;
-  border-color: #7BCADE;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+/* Ant Design Slider Customizations */
+.ant-slider-handle,
+.ant-slider-track,
+.ant-slider-dot-active,
+.ant-slider:hover .ant-slider-track,
+.ant-slider:hover .ant-slider-handle,
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open),
+.ant-slider-handle-click-focused {
+  border-color: var(--btn-primary-color);
 }
 
 .ant-slider-handle {
-  border: solid 2px #7BCADE;
+  border: solid 2px var(--btn-primary-color);
 }
 
-.ant-slider-track {
-  border: solid 2px #7BCADE;
-}
-
-.ant-slider-dot-active {
-  border-color: #7BCADE;
-}
-
-.ant-slider:hover .ant-slider-track {
-  background-color: #7BCADE;
-}
-
-.ant-slider:hover .ant-slider-handle {
-  border-color: #7BCADE;
-}
-
-.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
-  border-color: #7BCADE;
-}
-
-.ant-slider-handle-click-focused {
-  border-color: #7BCADE;
-}
+/* Other styles */
 .devicon-size {
   font-size: 1.5rem;
   padding-top: 3px;
 }
 
 .b {
-  width: 30px
+  width: 30px;
 }
 
-/* width */
+/* Scrollbar Customizations */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f3f6f8;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
