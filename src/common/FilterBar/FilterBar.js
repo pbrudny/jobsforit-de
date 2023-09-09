@@ -6,7 +6,6 @@ import store from "../../stores/store";
 import {observer} from "mobx-react";
 import FilterButton from "../FilterButton/FilterButton";
 import windowSize from 'react-window-size';
-import {sliceCity, sliceTech} from "../helpers";
 import Heading from '../Heading';
 import style from './style.module.scss'
 import {ReactComponent as FilterIcon} from '../../assets/img/icons-new-design/filter.svg';
@@ -26,14 +25,11 @@ import SliderInput from '../SliderInput';
 import Button from '../Button/Button';
 import {ThemeContext} from "../../themeContext";
 import TechnologySlider from "../TechnologySlider/TechnologySlider";
-
 import NumberFormat from "react-number-format";
-
 const marks = [
   {value: 0, label: '0'},
   {value: 200000, label: '€200k'},
 ];
-
 class FilterBar extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +67,6 @@ class FilterBar extends Component {
     this.setState(prevState => {
       let filterExperienceSelectedValues = [...prevState.filterExperienceSelectedValues];
 
-      // if includes "all"
       if (filterExperienceSelectedValues.includes(3)) {
         filterExperienceSelectedValues = filterExperienceSelectedValues.filter(elementVal => elementVal != 3);
       }
@@ -83,7 +78,6 @@ class FilterBar extends Component {
         filterExperienceSelectedValues.push(value);
         return {filterExperienceSelectedValues: filterExperienceSelectedValues};
       }
-
     });
   };
 
@@ -119,11 +113,6 @@ class FilterBar extends Component {
       filterExperienceSelectedValues,
       filterSortValue
     } = this.state;
-    console.log('Filtering...');
-    console.log(`Salary: ${filterSalaryRangeValue}`);
-    console.log(`Exp: ${filterExperienceSelectedValues}`);
-    console.log(`Sort: ${filterSortValue}`);
-
     [store.salaryBottom, store.salaryTop] = filterSalaryRangeValue;
 
     if (filterExperienceSelectedValues.length > 0) {
@@ -137,12 +126,10 @@ class FilterBar extends Component {
     }
 
     store.sort = filterSortValue;
-
     this.popupClosedHandler();
     store.filterJobs();
     this.cleanCurrentJob();
   }
-
   cleanCurrentJob() {
     store.fromUrl = false;
     store.currentJobId = null;
@@ -184,16 +171,6 @@ class FilterBar extends Component {
   }
 
   handleTechnology(tech) {
-    // let citiesLocal = [];
-    // citiesLocal.push('Cieszyn')
-    //
-    // store.cities.push('Gliwice');
-    // store.cities[0] = 'Siemianowice';
-
-
-    //store1 store.cities, store.technology, store.
-    // store2 new-cities,
-
     store.remoteLevel = null;
     const technology = tech.toLowerCase();
 
@@ -242,7 +219,6 @@ class FilterBar extends Component {
     if (store.isCitySelected(city.fields.name)) {
       return this.props.classes.placeSelected
     }
-
     return this.props.classes.place
   }
 
@@ -330,8 +306,6 @@ class FilterBar extends Component {
     const themeContext = this.context;
     const {classes} = this.props;
     const {cities, technologies, jobs} = store;
-    const filtersEnd = sliceTech(this.props.windowWidth);
-    const cityEnd = sliceCity(this.props.windowWidth);
 
     if (!cities || !technologies || !jobs) {
       return (
@@ -585,7 +559,6 @@ class FilterBar extends Component {
         </FilterButton>
       )
     });
-
     const mobileTechnologiesPopupOutput = (
       <div
         className={themeContext.theme === 'dark' ? [style.filterPopup, style.filterPopup__dark].join(' ') : style.filterPopup}>
@@ -627,13 +600,11 @@ class FilterBar extends Component {
     }
 
     const filterBarClasses = [style.FilterBar];
-
     if (themeContext.theme === 'dark') {
       filterBarClasses.push(style.FilterBar_dark);
     } else {
       filterBarClasses.push(style.FilterBar_light)
     }
-
     return (
       <>
         <div className={filterBarClasses.join(' ')}>
@@ -717,7 +688,6 @@ class FilterBar extends Component {
 }
 
 FilterBar.contextType = ThemeContext;
-
 FilterBar.propTypes = {
   classes: PropTypes.object,
 };

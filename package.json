@@ -67,11 +67,11 @@
     "xml-formatter": "^2.6.1"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "(node src/sitemap.js) && react-scripts build && (cd server && yarn install)",
-    "start-client": "react-scripts start",
+    "dev": "react-app-rewired start",
+    "build": "(node src/sitemap.js) && react-app-rewired build && (cd server && yarn install)",
+    "start-client": "react-app-rewired start",
     "start": "cd server && yarn start",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "cypress-cucumber-preprocessor": {
@@ -99,11 +99,16 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.22.15",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "8.1.0",
     "compression-webpack-plugin": "^4.0.0",
-    "enzyme-to-json": "^3.4.4"
+    "enzyme-to-json": "^3.4.4",
+    "react-app-rewired": "^2.2.1"
   },
   "engines": {
-    "node": "14.15.0",
+    "node": "14.21.3",
     "yarn": ">=1.22.0",
     "npm": ">=6.3.14"
   }
