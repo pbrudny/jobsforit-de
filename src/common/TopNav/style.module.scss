@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .topNav {
-    top: 0px;
+    top: 0;
     width: 100%;
     position: sticky;
     padding: 0 16px;
@@ -14,43 +14,10 @@
 
     &_light {
         background-color: #fff;
-
-        .topNav {
-            &_menu_item {
-                color: $dark-gray;
-            }
-
-            &_button {
-                color: $dark-400;
-            }
-        }
     }
 
     &_dark {
         background: $dark-300;
-
-        .topNav {
-            &_logo {
-                color: #fff;
-
-                :global(#AnimalBody),
-                :global(#AnimalHands),
-                :global(#laptopLogo) {
-                    path {
-                        fill: $dark-300 !important;
-                    }
-                }
-
-            }
-
-            &_menu_item {
-                color: $grey-300;
-            }
-
-            &_button {
-                color: $dark-400;
-            }
-        }
     }
 
     &_wrapper {
@@ -89,7 +56,7 @@
 
         a {
             transition: all 0.2s ease-in-out;
-        
+
             &:hover {
                 color: $primary;
             }
@@ -97,14 +64,48 @@
     }
 
     &_button {
-        vertical-align:top;
+        vertical-align: top;
         font-weight: 500;
         color: #fff;
         box-shadow: 0px 4px 8px rgba(185, 52, 125, 0.25);
         background: linear-gradient(90.19deg, #CD5C9C 0.19%, #DC6747 118.99%);
     }
+}
 
-    @media screen and (min-width: $breakpoint-md) {
+.topNav_light {
+    .topNav_menu_item {
+        color: $dark-gray;
+    }
+
+    .topNav_button {
+        color: $dark-400;
+    }
+}
+
+.topNav_dark {
+    .topNav_logo {
+        color: #fff;
+
+        :global(#AnimalBody),
+        :global(#AnimalHands),
+        :global(#laptopLogo) {
+            path {
+                fill: $dark-300 !important;
+            }
+        }
+    }
+
+    .topNav_menu_item {
+        color: $grey-300;
+    }
+
+    .topNav_button {
+        color: $dark-400;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .topNav {
         padding-left: 32px;
         padding-right: 32px;
 

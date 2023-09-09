@@ -1,18 +1,14 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-import {ThemeContext} from "../../themeContext";
-
-
+import React, { useState, useContext, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../../themeContext";
 import style from './style.module.scss';
 
-class Button extends React.Component {
+const Button = ({ classes: propClasses, variant = '', disabled, clicked, href, children }) => {
+    const [clickCount, setClickCount] = useState(0);
+    const [spanStyles, setSpanStyles] = useState({});
+    const themeContext = useContext(ThemeContext);
 
-    state = {
-        clickCount: 0,
-        spanStyles: {}
-    }
-
-    showRipple = (e) => {
+    const showRipple = (e) => {
         const rippleContainer = e.currentTarget;
         const size = rippleContainer.offsetWidth;
         const pos = rippleContainer.getBoundingClientRect();
@@ -20,107 +16,69 @@ class Button extends React.Component {
         const event_offsetY = e.pageY - window.pageYOffset - pos.top;
         const x = event_offsetX - (size / 2);
         const y = event_offsetY - (size / 2);
-        const spanStyles = {top: y + 'px', left: x + 'px', height: size + 'px', width: size + 'px'};
-        const count = this.state.clickCount + 1;
-        this.setState({
-            spanStyles: {...this.state.spanStyles, [count]: spanStyles},
-            clickCount: count
-        });
+        const newSpanStyles = {top: y + 'px', left: x + 'px', height: size + 'px', width: size + 'px'};
+        setClickCount(prevCount => prevCount + 1);
+        setSpanStyles(prevStyles => ({...prevStyles, [clickCount]: newSpanStyles}));
     }
 
-    renderRippleSpan = () => {
-        const {showRipple = false, spanStyles = {}} = this.state;
-        const spanArray = Object.keys(spanStyles);
-        if (spanArray && spanArray.length > 0) {
-            return (
-                spanArray.map((key, index) => {
-                    return <span key={'spanCount_' + index} className="" style={{...spanStyles[key]}}></span>
-                })
-            )
-        } else {
-            return null;
-        }
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setClickCount(0);
+            setSpanStyles({});
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, [clickCount, spanStyles]);
+
+    const renderRippleSpan = () => {
+        return Object.keys(spanStyles).map((key, index) => (
+          <span key={'spanCount_' + index} className="" style={spanStyles[key]}></span>
+        ));
     }
 
-    cleanUp = () => {
-        const initialState = {
-            clickCount: 0,
-            spanStyles: {}
-        };
-        this.setState({...initialState});
+    const baseClasses = [style.Button];
+    if (propClasses) {
+        baseClasses.push(...propClasses);
     }
 
-    callCleanUp = (cleanup, delay) => {
-        return () => {
-            clearTimeout(this.bounce);
-            this.bounce = setTimeout(() => {
-                cleanup();
-            }, delay);
-        }
+    if (variant.includes('secondary')) {
+        baseClasses.push(style.Button_secondary);
+        baseClasses.push(themeContext.theme === 'dark' ? style.Button_secondary_dark : style.Button_secondary_light);
     }
 
-    render() {
-        const themeContext = this.context;
-
-        const classes = this.props.classes ? [...this.props.classes] : [];
-        classes.push(style.Button);
-
-        const variant = this.props.variant ?? '';
-        if (variant.includes('secondary')) {
-            classes.push(style.Button_secondary);
-
-            if(themeContext.theme === 'dark') {
-                classes.push(style.Button_secondary_dark);
-            } else {
-                classes.push(style.Button_secondary_light);
-            }
-        }
-        if (variant.includes('primary')) {
-            classes.push(style.Button_primary);
-
-            if(themeContext.theme === 'dark') {
-                classes.push(style.Button_primary_dark);
-            } else {
-                classes.push(style.Button_primary_light);
-            }
-        }
-        if (variant.includes('mid')) {
-            classes.push(style.Button_mid)
-        }
-        if (variant.includes('long')) {
-            classes.push(style.Button_long)
-        }
-        let tag = (
-            <button
-                disabled={this.props.disabled}
-                className={classes.join(' ')}
-                onClick={this.props.clicked}>
-                {this.props.children}
-                <div className={style.Button_rippleContainer} onMouseDown={this.showRipple}
-                     onMouseUp={this.callCleanUp(this.cleanUp, 2000)}>
-                    {this.renderRippleSpan()}
-                </div>
-            </button>
-        );
-
-        if (this.props.href) {
-            tag = (
-                <Link
-                    to={this.props.href}
-                    className={classes.join(' ')}>
-                    {this.props.children}
-                    <div className={style.Button_rippleContainer} onMouseDown={this.showRipple}
-                         onMouseUp={this.callCleanUp(this.cleanUp, 2000)}>
-                        {this.renderRippleSpan()}
-                    </div>
-                </Link>
-            );
-        }
-
-        return tag;
+    if (variant.includes('primary')) {
+        baseClasses.push(style.Button_primary);
+        baseClasses.push(themeContext.theme === 'dark' ? style.Button_primary_dark : style.Button_primary_light);
     }
+
+    if (variant.includes('mid')) {
+        baseClasses.push(style.Button_mid);
+    }
+
+    if (variant.includes('long')) {
+        baseClasses.push(style.Button_long);
+    }
+
+    const combinedClasses = baseClasses.join(' ');
+
+    const content = (
+      <>
+          {children}
+          <div className={style.Button_rippleContainer} onMouseDown={showRipple}>
+              {renderRippleSpan()}
+          </div>
+      </>
+    );
+
+    return href ? (
+      <Link to={href} className={combinedClasses}>
+          {content}
+      </Link>
+    ) : (
+      <button disabled={disabled} className={combinedClasses} onClick={clicked}>
+          {content}
+      </button>
+    );
 }
-
-Button.contextType = ThemeContext;
 
 export default Button;
