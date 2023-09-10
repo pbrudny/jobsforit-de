@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import {ThemeContext} from "../themeContext";
+import { ThemeContext } from "../themeContext";
 
 import style from './ThemeSwitcher.module.scss';
 
-export class ThemeSwitcher extends React.Component {
+const ThemeSwitcher = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
-    render() {
+    const className = theme === 'dark'
+      ? [style.ThemeSwitcher, style.ThemeSwitcher_dark].join(' ')
+      : [style.ThemeSwitcher, style.ThemeSwitcher_light].join(' ');
 
-        return (
-            <ThemeContext.Consumer>
-                {({theme, toggleTheme}) => (
-                    <label htmlFor="theme" className={theme === 'dark' ? [style.ThemeSwitcher, style.ThemeSwitcher_dark].join(' ') : [style.ThemeSwitcher, style.ThemeSwitcher_light].join(' ')}>
-                        <input onChange={toggleTheme} type="checkbox" name="theme" id="theme"/>
-                    </label>
-                )}
-            </ThemeContext.Consumer>
-        );
-    }
+    return (
+      <label htmlFor="theme" className={className}>
+          <input onChange={toggleTheme} type="checkbox" name="theme" id="theme"/>
+      </label>
+    );
 }
 
 export default ThemeSwitcher;

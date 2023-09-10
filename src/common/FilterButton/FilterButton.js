@@ -1,18 +1,17 @@
-import React, {Component} from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import {observer} from "mobx-react";
-import {withRouter} from "react-router-dom";
+import { observer } from "mobx-react";
+import { withRouter } from "react-router-dom";
 import style from './style.module.scss';
-import {ThemeContext} from "../../themeContext";
+import { ThemeContext } from "../../themeContext";
 
-class FilterButton extends Component {
+const FilterButton = observer(withRouter(({ buttonPressed, dataCyPrefix, value, onClick, children, className, withIcon, withIconRight }) => {
+    const [clickCount, setClickCount] = useState(0);
+    const [spanStyles, setSpanStyles] = useState({});
+    const themeContext = useContext(ThemeContext);
+    const bounce = useRef(null);
 
-    state = {
-        clickCount: 0,
-        spanStyles: {}
-    }
-
-    showRipple = (e) => {
+    const showRipple = (e) => {
         const rippleContainer = e.currentTarget;
         const size = rippleContainer.offsetWidth;
         const pos = rippleContainer.getBoundingClientRect();
@@ -20,94 +19,86 @@ class FilterButton extends Component {
         const event_offsetY = e.pageY - window.pageYOffset - pos.top;
         const x = event_offsetX - (size / 2);
         const y = event_offsetY - (size / 2);
-        const spanStyles = {top: y + 'px', left: x + 'px', height: size + 'px', width: size + 'px'};
-        const count = this.state.clickCount + 1;
-        this.setState({
-            spanStyles: {...this.state.spanStyles, [count]: spanStyles},
-            clickCount: count
-        });
+        const newSpanStyles = { top: y + 'px', left: x + 'px', height: size + 'px', width: size + 'px' };
+        const count = clickCount + 1;
+        setSpanStyles(prevStyles => ({ ...prevStyles, [count]: newSpanStyles }));
+        setClickCount(count);
     }
 
-    renderRippleSpan = () => {
-        const {showRipple = false, spanStyles = {}} = this.state;
+    const renderRippleSpan = () => {
         const spanArray = Object.keys(spanStyles);
-        if (spanArray && spanArray.length > 0) {
-            return (
-                spanArray.map((key, index) => {
-                    return <span key={'spanCount_' + index} className="" style={{...spanStyles[key]}}></span>
-                })
-            )
-        } else {
-            return null;
-        }
+        return (
+          spanArray.length > 0 ? (
+            spanArray.map((key, index) => (
+              <span key={'spanCount_' + index} className="" style={{ ...spanStyles[key] }}></span>
+            ))
+          ) : null
+        );
     }
 
-    cleanUp = () => {
-        const initialState = {
-            clickCount: 0,
-            spanStyles: {}
-        };
-        this.setState({...initialState});
+    const cleanUp = () => {
+        setClickCount(0);
+        setSpanStyles({});
     }
 
-    callCleanUp = (cleanup, delay) => {
+    const callCleanUp = (delay) => {
         return () => {
-            clearTimeout(this.bounce);
-            this.bounce = setTimeout(() => {
-                cleanup();
+            clearTimeout(bounce.current);
+            bounce.current = setTimeout(() => {
+                cleanUp();
             }, delay);
         }
     }
 
-    render() {
-        const themeContext = this.context;
+    useEffect(() => {
+        return () => {
+            if (bounce.current) {
+                clearTimeout(bounce.current);
+            }
+        };
+    }, []);
 
+    const pressed = buttonPressed ? 'pressed' : 'unpressed';
 
-        const {buttonPressed} = this.props;
-        const pressed = buttonPressed ? 'pressed' : 'unpressed';
+    const classes = [style.FilterButton];
 
-        const classes = [style.FilterButton];
-
-        if(themeContext.theme === 'dark') {
-            classes.push(style.FilterButton_dark);
-        } else {
-            classes.push(style.FilterButton_light)
-        }
-
-        if (this.props.className) {
-            classes.push(this.props.className);
-        }
-
-        if (this.props.withIcon) {
-            classes.push(style.FilterButton__withIcon);
-        }
-
-        if (this.props.withIconRight) {
-            classes.push(style.FilterButton__withIconRight);
-        }
-
-        if (pressed === 'pressed') {
-            classes.push(style.FilterButton__pressed);
-        }
-
-        return (
-            <button
-                className={classes.join(' ')}
-                data-cy={this.props.dataCyPrefix + pressed}
-                value={this.props.value}
-                onClick={this.props.onClick}
-            >
-                {this.props.children}
-                <div className={style.FilterButton_rippleContainer} onMouseDown={this.showRipple}
-                     onMouseUp={this.callCleanUp(this.cleanUp, 2000)}>
-                    {this.renderRippleSpan()}
-                </div>
-            </button>
-        );
+    if (themeContext.theme === 'dark') {
+        classes.push(style.FilterButton_dark);
+    } else {
+        classes.push(style.FilterButton_light);
     }
-}
 
-FilterButton.contextType = ThemeContext;
+    if (className) {
+        classes.push(className);
+    }
+
+    if (withIcon) {
+        classes.push(style.FilterButton__withIcon);
+    }
+
+    if (withIconRight) {
+        classes.push(style.FilterButton__withIconRight);
+    }
+
+    if (pressed === 'pressed') {
+        classes.push(style.FilterButton__pressed);
+    }
+
+    return (
+      <button
+        className={classes.join(' ')}
+        data-cy={dataCyPrefix + pressed}
+        value={value}
+        onClick={onClick}
+      >
+          {children}
+          <div className={style.FilterButton_rippleContainer} onMouseDown={showRipple}
+               onMouseUp={callCleanUp(2000)}>
+              {renderRippleSpan()}
+          </div>
+      </button>
+    );
+}));
 
 FilterButton.propTypes = {
     tech: PropTypes.any,
@@ -115,8 +106,5 @@ FilterButton.propTypes = {
     onClick: PropTypes.func,
     className: PropTypes.string
 };
-
-FilterButton = observer(FilterButton);
-FilterButton = withRouter(FilterButton);
 
 export default FilterButton;
