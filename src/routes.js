@@ -13,7 +13,6 @@ const Pricing = lazy(() => import('./static/Pricing'));
 const About = lazy(() => import('./static/About'));
 const AboutOld = lazy(() => import('./pages/About.js'));
 const Company = lazy(() => import('./static/CompanyProfile'));
-const BrandsList = lazy(() => import("./brands/BrandsList"));
 const EduRoom = lazy(() => import('./EduRoom/EduRoom'));
 const Tutorials = lazy(() => import('./EduRoom/Tutorials/Tutorials'));
 const Meetups = lazy(() => import('./EduRoom/Meetups/Meetups'));
@@ -40,7 +39,6 @@ const Routes = () => (
       <Route exact path="/pricing" component={Pricing} />
       <Route exact path="/about" component={About} />
       <Route exact path="/company" component={Company} />
-      <Route exact path="/brand-room" component={BrandsList} />
       <Route exact path="/imprint" component={Imprint} />
       <Route exact path="/edu-room" component={EduRoom} />
       <Route exact path="/tutorials" component={Tutorials} />
