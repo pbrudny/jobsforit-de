@@ -1,72 +1,80 @@
+require('dotenv').config();
+
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
 const path = require('path');
-const fs = require('fs')
-const contentful = require("contentful");
+const fs = require('fs').promises;
+const contentful = require('contentful');
 const compression = require('compression');
 
+// Constants
+const PORT = process.env.PORT || 5000;
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-const MANAGER_TOKEN = process.env.REACT_APP_MANAGER_TOKEN;
-const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT || "master";
+const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT || 'master';
+const MAIN_TITLE = "IT jobs with salaries - Jobs For IT";
+const MAIN_DESCRIPTION = "Job offers for software developers, testers, UX designers, DevOps";
+const MAIN_IMAGE = "https://www.jobsforit.de/static/media/wiewior.4979dfde.png";
+const FILE_PATH = path.resolve(__dirname, '..', 'build', 'index.html');
 
+// Contentful client setup
 const client = contentful.createClient({
   space: SPACE_ID,
   accessToken: ACCESS_TOKEN,
   environment: ENVIRONMENT
 });
 
-const getJob = (slug) => client.getEntries({
+const getJob = slug => client.getEntries({
   content_type: 'job',
   'fields.slug': slug,
   select: 'fields.ogTitle,fields.ogDescription,fields.ogImage,fields.position,fields.company,fields.city',
   limit: 1,
 });
 
-const mainTitle = "IT jobs with salaries - Jobs For IT";
-const mainDescription = "Job offers for software developers, testers, UX designers, DevOps";
-const mainImage = "https://www.jobsforit.de/static/media/wiewior.4979dfde.png";
+// Server setup
+const app = express();
 
+// Middleware
 app.use(compression());
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
-const filePath = path.resolve(__dirname, '..', 'build', 'index.html');
-const filePathPolicy = path.resolve(__dirname, '..', 'build', 'privacy-policy.html');
-
-app.get('/jobs/:id', function(request, response) {
+// Routes
+app.get('/jobs/:id', async (request, response) => {
   const id = request.params.id;
-  fs.readFile(filePath, 'utf8', (err,data) => {
-    if (err) {
-      return console.log(err);
-    }
+  let data;
 
-    getJob(id)
-      .then(entries => {
-        const { position, ogTitle, ogDescription, ogImage } = entries.items[0].fields;
-        const { name: company, logo } = entries.items[0].fields.company.fields;
-        const { name: city } = entries.items[0].fields.city.fields;
-        const title = ogTitle || `${position} Job - ${company} - ${city} - Jobs For IT`;
-        const description = ogDescription || `Working in IT: ${company} is looking for ${position}. Job ${city}.`;
-        const image = ogImage ? ogImage.fields.file.url : logo.fields.file.url;
-        data = data.replace(new RegExp(mainTitle,"g"), title);
-        data = data.replace(new RegExp(mainDescription,"g"), description);
-        data = data.replace(mainImage, "https:" + image);
-        response.send(data);
-      }).catch(err => {
-      console.error(err);
+  try {
+    data = await fs.readFile(FILE_PATH, 'utf8');
+    const entries = await getJob(id);
+    const { position, ogTitle, ogDescription, ogImage } = entries.items[0].fields;
+    const { name: company, logo } = entries.items[0].fields.company.fields;
+    const { name: city } = entries.items[0].fields.city.fields;
+
+    const title = ogTitle || `${position} Job - ${company} - ${city} - Jobs For IT`;
+    const description = ogDescription || `Working in IT: ${company} is looking for ${position}. Job ${city}.`;
+    const image = ogImage ? ogImage.fields.file.url : logo.fields.file.url;
+
+    data = data.replace(new RegExp(MAIN_TITLE, "g"), title);
+    data = data.replace(new RegExp(MAIN_DESCRIPTION, "g"), description);
+    data = data.replace(MAIN_IMAGE, "https:" + image);
+
+    response.send(data);
+  } catch (err) {
+    console.error(err);
+    if (data) {
       response.send(data);
-    });
-     });
+    } else {
+      response.status(500).send('Internal server error');
+    }
+  }
 });
 
-// fixed client side urls: https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually?page=2&tab=active#tab-top
-app.get('/*', function(req, res) {
-  res.sendFile(filePath, function(err) {
+app.get('/*', (req, res) => {
+  res.sendFile(FILE_PATH, function(err) {
     if (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     }
-  })
-})
+  });
+});
 
-app.listen(port, () => console.log(`Listening to you on port ${port}`));
+// Start the server
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
