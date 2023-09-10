@@ -1,5 +1,4 @@
-import React, {Component} from "react";
-import {Col, Row} from "antd";
+import React, { useState, useCallback } from "react";
 import {
   MDBCollapse,
   MDBContainer,
@@ -7,11 +6,13 @@ import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
-  MDBNavItem, MDBNavLink
+  MDBNavItem,
+  MDBNavLink
 } from "mdbreact";
 import logoDE from 'assets/img/wiewior.png';
 import {withStyles} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   topNav: {
@@ -24,48 +25,28 @@ const styles = theme => ({
   },
 });
 
-class MobileTopNav extends Component {
-  state = {
-    collapse: false,
-  };
+const MobileTopNav = ({ classes }) => {
+  const [collapse, setCollapse] = useState(false);
 
-  constructor() {
-    super();
-    this.toggleMenu= this.toggleMenu.bind(this);
-  }
+  const toggleMenu = useCallback(() => {
+    setCollapse(prevCollapse => !prevCollapse);
+  }, []);
 
-  toggleMenu() {
-    this.setState({
-      collapse: !this.state.collapse
-    });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const logo = logoDE;
-    return (
-      <Row>
-        <Col span={24}>
-        <MDBNavbar
-          style={{padding: 0}}
-          color="#f3f6f8 lighten-4"
-          light
-        >
+  return (
+    <Grid container>
+      <Grid item xs={12}>
+        <MDBNavbar style={{padding: 0}} color="#f3f6f8 lighten-4" light>
           <MDBContainer>
             <MDBNavbarBrand>
               <Link to={'/'}>
                 <div className={classes.topNav}>
-                  <img src={logo} className={classes.logoImg} alt="JobsForIT"/>
+                  <img src={logoDE} className={classes.logoImg} alt="JobsForIT"/>
                 </div>
               </Link>
             </MDBNavbarBrand>
-            <MDBHamburgerToggler
-              color="#7f7f7f"
-              id="hamburger1"
-              onClick={this.toggleMenu}
-            />
+            <MDBHamburgerToggler color="#7f7f7f" id="hamburger1" onClick={toggleMenu} />
             <MDBCollapse
-              isOpen={this.state.collapse}
+              isOpen={collapse}
               style={{
                 padding: 0,
                 zIndex: 5,
@@ -80,9 +61,6 @@ class MobileTopNav extends Component {
                 <MDBNavItem active>
                   <MDBNavLink style={{paddingLeft: "7vw"}} to="/">Home</MDBNavLink>
                 </MDBNavItem>
-                {/*<MDBNavItem>*/}
-                {/*  <MDBNavLink style={{paddingLeft: "7vw"}} to="/about">About</MDBNavLink>*/}
-                {/*</MDBNavItem>*/}
                 <MDBNavItem>
                   <MDBNavLink style={{paddingLeft: "7vw"}} to="/imprint">Imprint</MDBNavLink>
                 </MDBNavItem>
@@ -96,10 +74,9 @@ class MobileTopNav extends Component {
             </MDBCollapse>
           </MDBContainer>
         </MDBNavbar>
-      </Col>
-      </Row>
-    )
-  }
-}
+      </Grid>
+    </Grid>
+  );
+};
 
 export default withStyles(styles)(MobileTopNav);
