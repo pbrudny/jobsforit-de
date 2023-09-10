@@ -1,42 +1,38 @@
-import React from "react";
-
+import React from 'react';
 import style from './Heading.module.scss';
 
-class Heading extends React.Component {
-    render() {
-        const classes = [style.Heading];
-        let tag = '';
-        if(this.props.theme === 'dark') {
-            classes.push(style.Heading_white);
-        } else {
-            classes.push(style.Heading_black);
-        }
-        if(this.props.className) {
-            classes.push(this.props.className);
-        }
-        const variant = this.props.variant;
-        if(variant.includes('regular')) {
-            classes.push(style.Heading_regular)
-        }
-        if(variant.includes('h1')) {
-            classes.push(style.Heading_h1);
-            tag = (
-            <h1 className={classes.join(' ')}>{this.props.children}</h1>
-            );
-        } else if(variant.includes('h2')) {
-            classes.push(style.Heading_h2);
-            tag = (
-                <h2 className={classes.join(' ')}>{this.props.children}</h2>
-            );
-        } if(variant.includes('h3')) {
-            classes.push(style.Heading_h3);
-            tag = (
-                <h3 className={classes.join(' ')}>{this.props.children}</h3>
-            );
-        }
-        
-        return tag;
+const Heading = ({ theme, className, variant, children }) => {
+    const classes = [style.Heading];
+
+    // Handle theme styles
+    if (theme === 'dark') {
+        classes.push(style.Heading_white);
+    } else {
+        classes.push(style.Heading_black);
     }
-}
+
+    // Handle optional classname
+    if (className) {
+        classes.push(className);
+    }
+
+    // Handle variant styles
+    if (variant.includes('regular')) {
+        classes.push(style.Heading_regular);
+    }
+    if (variant.includes('h1')) {
+        classes.push(style.Heading_h1);
+    } else if (variant.includes('h2')) {
+        classes.push(style.Heading_h2);
+    } else if (variant.includes('h3')) {
+        classes.push(style.Heading_h3);
+    }
+
+    // Create the heading tag based on the variant
+    const Tag = variant.includes('h1') ? 'h1' :
+      variant.includes('h2') ? 'h2' : 'h3';
+
+    return <Tag className={classes.join(' ')}>{children}</Tag>;
+};
 
 export default Heading;
