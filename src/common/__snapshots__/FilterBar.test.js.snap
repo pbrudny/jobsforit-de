@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FilterBar renders the FilterBar Component correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
