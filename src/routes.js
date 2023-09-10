@@ -36,6 +36,7 @@ const Routes = () => (
       <Route exact path="/choose-plan" component={ChoosePlanContainer} />
       <Route exact path="/add-job-invoice" component={InvoiceDetails} />
       <Route exact path="/add-job" component={NewJobContainer} />
+      <Route exact path="/token" component={AboutOld} />
       <Route exact path="/pricing" component={Pricing} />
       <Route exact path="/about" component={About} />
       <Route exact path="/company" component={Company} />
