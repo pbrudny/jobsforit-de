@@ -1,20 +1,19 @@
-// Dependencies and Libraries
 const fs = require("fs");
 const path = require('path');
 const contentful = require("contentful");
 const moment = require('moment');
 const xmlFormatter = require('xml-formatter');
 const { paramsApplier } = require("react-router-sitemap");
+require('dotenv').config(); // Ensure environment variables are loaded.
 
-// Configuration Constants
 const CONTENTFUL_CONFIG = {
   space: process.env.REACT_APP_SPACE_ID,
   accessToken: process.env.REACT_APP_ACCESS_TOKEN,
-  environment: process.env.REACT_APP_ENVIRONMENT
+  environment: process.env.REACT_APP_ENVIRONMENT || 'master' // added default value 'master'
 };
+
 const client = contentful.createClient(CONTENTFUL_CONFIG);
 
-// Utility Functions
 async function fetchContentfulEntries(contentType) {
   try {
     const entries = await client.getEntries({ content_type: contentType });
@@ -25,7 +24,6 @@ async function fetchContentfulEntries(contentType) {
   }
 }
 
-// Sitemap Generation Functions
 function generatePathsBasedOnRoute(route) {
   const config = { [route.path]: [{ ...route.params }] };
   return paramsApplier([route.path], config);
@@ -35,15 +33,20 @@ function generateSitemap(routes) {
   const date = moment().format('YYYY-MM-DD');
   const host = 'https://jobsforit.de';
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  const xml = `
+      <?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${routes.map(route => `<url><loc>${host + route}</loc><lastmod>${date}</lastmod></url>`).join("")}
-      </urlset>`;
+      ${routes.map(route => `
+      <url>
+          <loc>${host + route}</loc>
+          <lastmod>${date}</lastmod>
+      </url>`).join('')}
+      </urlset>
+  `;
 
   return xmlFormatter(xml);
 }
 
-// Main Execution
 async function sitemapGenerator() {
   try {
     console.log('Starting sitemap generation...');
@@ -92,9 +95,6 @@ async function sitemapGenerator() {
         path: "/company",
       },
       {
-        path: "/brand-room",
-      },
-      {
         path: "/imprint",
       },
       {
@@ -126,7 +126,7 @@ async function sitemapGenerator() {
       },
       {
         path: "/privacy-policy",
-      },
+      }
     ];
 
     const newRoutes = routes.flatMap(generatePathsBasedOnRoute);
