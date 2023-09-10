@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 
 import Paper from "@material-ui/core/Paper/Paper";
@@ -17,51 +17,34 @@ const styles = theme => (
   }
 );
 
-class ZeroJobs extends Component {
-  resetAllFilters() {
+const ZeroJobs = (props) => {
+  const resetAllFilters = () => {
     store.resetAllFilters();
   }
 
-  render() {
-    const {classes} = this.props;
-    return <Paper style={{
-      paddingBottom: "50%",
-    }}>
+  const {classes} = props;
+
+  return (
+    <Paper style={{paddingBottom: "50%"}}>
       <Row>
         <Col span={10}>
-          <h1
-            style={{
-              paddingBottom: "30px",
-              paddingTop: "2rem",
-              textAlign: "center"
-            }}
-          >
+          <h1 style={{paddingBottom: "30px", paddingTop: "2rem", textAlign: "center"}}>
             <span>Zero jobs like this 🙁</span>
           </h1>
         </Col>
-        <Col span={3}>
-        </Col>
+        <Col span={3}></Col>
       </Row>
       <Row>
-        <Col span={10} >
-          <h3
-            style={{
-              paddingBottom: "30px",
-              paddingTop: "2rem",
-              textAlign: "center"
-            }}
-          >
-          <Button
-            variant="primary long"
-            clicked={this.resetAllFilters}
-          >
-            Reset filters
-          </Button>
+        <Col span={10}>
+          <h3 style={{paddingBottom: "30px", paddingTop: "2rem", textAlign: "center"}}>
+            <Button variant="primary long" clicked={resetAllFilters}>
+              Reset filters
+            </Button>
           </h3>
         </Col>
       </Row>
-    </Paper>;
-  }
+    </Paper>
+  );
 }
 
 ZeroJobs.propTypes = {

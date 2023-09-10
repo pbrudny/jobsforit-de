@@ -1,7 +1,9 @@
-import React from 'react';
-import SwiperCore, {Navigation} from "swiper";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import React, { useRef, useContext } from 'react';
+import SwiperCore, { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
+
+// ... [all your SVG imports] ...
 
 import {ReactComponent as AngularIcon} from 'assets/img/icons-new-design/technology-icons/angular.svg';
 import {ReactComponent as BlockChainIcon} from 'assets/img/icons-new-design/technology-icons/blockchain.svg';
@@ -28,112 +30,107 @@ import {ReactComponent as TestingIcon} from 'assets/img/icons-new-design/technol
 import {ReactComponent as UXIcon} from 'assets/img/icons-new-design/technology-icons/ux.svg';
 import {ReactComponent as VueIcon} from 'assets/img/icons-new-design/technology-icons/vue.svg';
 
-
 import style from './style.module.scss';
-import {ThemeContext} from "../../themeContext";
+import { ThemeContext } from "../../themeContext";
 
-class TechnologySlider extends React.Component {
+const TechnologySlider = (props) => {
 
-    prevButton = React.createRef();
-    nextButton = React.createRef();
+    const prevButton = useRef(null);
+    const nextButton = useRef(null);
 
-    technologyIcons = {
-        'JS': <JavaScriptIcon />,
-        'Angular': <AngularIcon />,
-        'Vue': <VueIcon />,
-        'React': <ReactIcon />,
-        'Node': <NodeIcon />,
-        'HTML': <HTMLIcon />,
-        'PHP': <PHPIcon />,
-        'Java': <JavaIcon />,
-        'Ruby': <RubyIcon />,
-        'Python': <PythonIcon />,
-        'C': <CLangIcon />,
-        '.Net': <DotNetIcon />,
-        'Scala': <ScalaIcon />,
-        'GO': <GoLangIcon />,
-        'Mobile': <MobileIcon />,
-        'Testing': <TestingIcon />,
-        'UX': <UXIcon />,
-        'DevOps': <DevOpsIcon />,
-        'Cloud': <CloudIcon />,
-        'Data': <DataIcon />,
-        'Game': <GameDevIcon />,
-        'PM/BA': <ProjectManagementIcon />,
-        'B-chain': <BlockChainIcon />,
-        'Other': <OtherIcon />
-    };
+  const technologyIcons = {
+    'JS': <JavaScriptIcon />,
+    'Angular': <AngularIcon />,
+    'Vue': <VueIcon />,
+    'React': <ReactIcon />,
+    'Node': <NodeIcon />,
+    'HTML': <HTMLIcon />,
+    'PHP': <PHPIcon />,
+    'Java': <JavaIcon />,
+    'Ruby': <RubyIcon />,
+    'Python': <PythonIcon />,
+    'C': <CLangIcon />,
+    '.Net': <DotNetIcon />,
+    'Scala': <ScalaIcon />,
+    'GO': <GoLangIcon />,
+    'Mobile': <MobileIcon />,
+    'Testing': <TestingIcon />,
+    'UX': <UXIcon />,
+    'DevOps': <DevOpsIcon />,
+    'Cloud': <CloudIcon />,
+    'Data': <DataIcon />,
+    'Game': <GameDevIcon />,
+    'PM/BA': <ProjectManagementIcon />,
+    'B-chain': <BlockChainIcon />,
+    'Other': <OtherIcon />
+  };
 
-    render() {
 
-        const themeContext = this.context;
+  const themeContext = useContext(ThemeContext);
 
-        SwiperCore.use([Navigation])
+    SwiperCore.use([Navigation]);
 
-        const technologies = this.props.technologies;
+    const technologies = props.technologies;
 
-        const classes = [style.TechnologySlider];
+    const classes = [style.TechnologySlider];
 
-        if(themeContext.theme === 'dark') {
-            classes.push(style.TechnologySlider_dark);
-        } else {
-            classes.push(style.TechnologySlider_light)
-        }
-
-        if(this.props.fullwidth) {
-            classes.push(style.TechnologySlider_fullwidth)
-        }
-
-        return (
-            <div className={classes.join(' ')}>
-                <Swiper
-                    spaceBetween={16}
-                    slidesPerView={'auto'}
-                    preventClicks
-                    allowTouchMove={false}
-                    navigation={{
-                        prevEl: this.prevButton.current,
-                        nextEl: this.nextButton.current
-                    }}
-                >
-                    {technologies.map(technology => (
-                        <SwiperSlide
-                            className={style.TechnologySlider__slide}
-                            key={technology.name}
-                        >
-                            <button
-                                className={style.TechnologySlider__slideButton}
-                                onClick={this.props.onClick}
-                                value={technology.name}
-                            >
-                                <div className={style.TechnologySlider__slideIconWrapper}
-                                     style={technology.buttonPressed ? {background: technology.background} : {}}>
-                                    <span className={[style.TechnologySlider__slideIcon].join(' ')}
-                                          style={technology.buttonPressed ? {color: 'white'} : {color: 'lightgray'}}>
-                                        {this.technologyIcons[technology.name]}
-                                    </span>
-                                </div>
-                                <span
-                                    className={technology.buttonPressed ? [style.TechnologySlider__slideName, style.TechnologySlider__slideName_active].join(' ') : style.TechnologySlider__slideName}>
-                                {technology.name}
-                            </span>
-                            </button>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <button
-                    className={[style.TechnologySlider__button, style.TechnologySlider__button_prev].join(' ')}
-                    ref={this.prevButton}
-                />
-                <button
-                    className={[style.TechnologySlider__button, style.TechnologySlider__button_next].join(' ')}
-                    ref={this.nextButton}
-                />
-            </div>
-        )
+    if (themeContext.theme === 'dark') {
+        classes.push(style.TechnologySlider_dark);
+    } else {
+        classes.push(style.TechnologySlider_light);
     }
-}
 
-TechnologySlider.contextType = ThemeContext;
+    if (props.fullwidth) {
+        classes.push(style.TechnologySlider_fullwidth);
+    }
+
+    return (
+      <div className={classes.join(' ')}>
+          <Swiper
+            spaceBetween={16}
+            slidesPerView={'auto'}
+            preventClicks
+            allowTouchMove={false}
+            navigation={{
+                prevEl: prevButton.current,
+                nextEl: nextButton.current
+            }}
+          >
+              {technologies.map(technology => (
+                <SwiperSlide
+                  className={style.TechnologySlider__slide}
+                  key={technology.name}
+                >
+                    <button
+                      className={style.TechnologySlider__slideButton}
+                      onClick={props.onClick}
+                      value={technology.name}
+                    >
+                        <div className={style.TechnologySlider__slideIconWrapper}
+                             style={technology.buttonPressed ? {background: technology.background} : {}}>
+                                <span className={[style.TechnologySlider__slideIcon].join(' ')}
+                                      style={technology.buttonPressed ? {color: 'white'} : {color: 'lightgray'}}>
+                                    {technologyIcons[technology.name]}
+                                </span>
+                        </div>
+                        <span
+                          className={technology.buttonPressed ? [style.TechnologySlider__slideName, style.TechnologySlider__slideName_active].join(' ') : style.TechnologySlider__slideName}>
+                            {technology.name}
+                        </span>
+                    </button>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+          <button
+            className={[style.TechnologySlider__button, style.TechnologySlider__button_prev].join(' ')}
+            ref={prevButton}
+          />
+          <button
+            className={[style.TechnologySlider__button, style.TechnologySlider__button_next].join(' ')}
+            ref={nextButton}
+          />
+      </div>
+    )
+}
 
 export default TechnologySlider;
